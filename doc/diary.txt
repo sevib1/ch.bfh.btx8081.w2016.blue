@@ -21,3 +21,5 @@ Donnerstag 29.09.2016, 13:00-14:00, N.521
 Fehlerbehebung commiten aus Eclipse 
 Task 1 im Team besprochen
 Task 2 Gruppenbesprechung am Mo, 03.10.2016, um 12.00 Uhr
+
+Test
