@@ -1,4 +1,4 @@
-27.09.16, 14.20 Uhr, kammf1, lamr1, dittp2, sevib1, jolop1, telec1, varan2, erste Besprechung CS1 Task1, CS1 Task2
+27.09.16, 14.20 Uhr, kammf1, lamr1, dittp2, sevib1, jolop1, telec1, varan1, erste Besprechung CS1 Task1, CS1 Task2
 
 CS1 Task1:
 Fabian Kammermann
@@ -23,8 +23,11 @@ Task 1 im Team besprochen
 
 Task 2 Gruppenbesprechung am Mo, 03.10.2016, um 12.00 Uhr
 
-24.09.2016, 14:00-15:00, 60 Minuten jolop1 Bearbeitung CS1_Task1
+24.09.2016, 14:00-15:00, 60 Minuten, jolop1 Bearbeitung CS1_Task1
 27.09.2016 kammf1 30 min Bearbeitung CS1_Task_1
 28.09.2016, 20.00Uhr -21.00Uhr, 60 Mintuten sevib1 Bearbeitung von CS1_Task2
 28.09.2016, 18:00-19:00, 60 Minuten jolop1 Bearbeitung von CS1_Task2
 29.09.2016 lamlr1 Bearbeitung CS1_Task2
+
+28.09.2016 18.00 Uhr - 18.45, 45 Minuten varan1 Durchlesen von CS1_Task1 und Ergaenzungen machen.
+
