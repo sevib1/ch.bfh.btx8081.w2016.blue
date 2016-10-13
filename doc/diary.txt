@@ -44,5 +44,6 @@ Sevinc, Lam, Dittli, Kanagarasa --> Use Casa Scenario Insulinspritze
 Use Case Scenario fertig am: Donnerstag, 13.10.2016
 10.10.2016 12:45 - 13:30, 45 minuten Jolo, Telesca Bearbeitung Use Case Scenario (Sensor)
 
+12.10.2016 10.00 - 10.45, 45 Minuten Jolo, bearbeitung CS2_Task2 Aktivitätsdiagramm 
 13.10.2016 8.20 - 08.45, 25 minutes kanagarasa , Ergaenzung der Scenario Insulinspritze
 13.10.2016 21.30 - 22.15, 45 Minuten Dittli, Überprüfung Insulinspritze
