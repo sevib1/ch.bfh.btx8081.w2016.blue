@@ -1,4 +1,4 @@
-27.09.16, 14.20 Uhr, kammf1, lamr1, dittp2, sevib1, jolop1, telec1, varan1, erste Besprechung CS1 Task1, CS1 Task2
+﻿27.09.16, 14.20 Uhr, kammf1, lamr1, dittp2, sevib1, jolop1, telec1, varan1, erste Besprechung CS1 Task1, CS1 Task2
 
 CS1 Task1:
 Fabian Kammermann
@@ -45,3 +45,4 @@ Use Case Scenario fertig am: Donnerstag, 13.10.2016
 10.10.2016 12:45 - 13:30, 45 minuten Jolo, Telesca Bearbeitung Use Case Scenario (Sensor)
 
 13.10.2016 8.20 - 08.45, 25 minutes kanagarasa , Ergaenzung der Scenario Insulinspritze
+13.10.2016 21.30 - 22.15, 45 Minuten Dittli, Überprüfung Insulinspritze
