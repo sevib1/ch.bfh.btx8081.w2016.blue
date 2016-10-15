@@ -47,3 +47,4 @@ Use Case Scenario fertig am: Donnerstag, 13.10.2016
 12.10.2016 10.00 - 10.45, 45 Minuten Jolo, bearbeitung CS2_Task2 Aktivitätsdiagramm 
 13.10.2016 8.20 - 08.45, 25 minutes kanagarasa , Ergaenzung der Scenario Insulinspritze
 13.10.2016 21.30 - 22.15, 45 Minuten Dittli, Überprüfung Insulinspritze
+15.10.2016 10.45 - 11.00, 15 Minuten Jolo, Fragen für Interview ausdenken
