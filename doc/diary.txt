@@ -1,4 +1,13 @@
-﻿27.09.16, 14.20 Uhr, kammf1, lamr1, dittp2, sevib1, jolop1, telec1, varan1, erste Besprechung CS1 Task1, CS1 Task2
+﻿Teammitglieder:
+Fabian Kammermann (kammf1)
+Remy Lam (lamr1)
+Burcu Sevinc (sevib1)
+Patrick Jolo (jolop1)
+Pascal Dittli (dittp2)
+Niveadha Kanagarasa (varan1)
+Claudia Telesca (telec1)
+
+27.09.16 erste Besprechung CS1 Task1, CS1 Task2
 
 CS1 Task1:
 Fabian Kammermann
@@ -14,37 +23,19 @@ Burcu Sevinc
 Diary
 Claudia Telesca (Verantwortliche)
 
-nächste Besprechnung:
-Montag 10.10.2016, 12:45-14:00, N.521 
 
-29.09.2016, 13.00Uhr - 14.20Uhr, 80 Minuten
+29.09.2016
+Teambesprechung Task1
 Fehlerbehebung commiten aus Eclipse 
-Task 1 im Team besprochen
+Nächste Teambesprechung von Task 2 am Mo, 03.10.2016, um 12.00 Uhr
 
-Task 2 Gruppenbesprechung am Mo, 03.10.2016, um 12.00 Uhr
+03.10.2016 Gruppenbesprechung CS1_Task2
 
-24.09.2016, 14:00-15:00, 60 Minuten, jolop1 Bearbeitung CS1_Task1
-26.09.2016 dittp2 90 min CS0_Task1 Dok. durchlesen und analysieren
-27.09.2016 kammf1 30 min Bearbeitung CS1_Task_1
-27.09.2016 dittp2 30 min Bearbeitung und Recherche CS1_Task_1
-28.09.2016 18.00 Uhr - 18.45, 45 Minuten varan1 Durchlesen von CS1_Task1 und Ergaenzungen machen.
-28.09.2016, 18:00-19:00, 60 Minuten jolop1 Bearbeitung von CS1_Task2
-28.09.2016, 20.00Uhr -21.00Uhr, 60 Mintuten sevib1 Bearbeitung von CS1_Task2
-29.09.2016 lamlr1 Bearbeitung CS1_Task2
+06.10.2016 Gruppenbesprechung CS2_Task1 
 
-03.10.2016 12.00 Uhr - 12.45, 45 Minuten Gruppenbesprechung CS1_Task2
-06.10.2016 12.45 Uhr - 14.15, 90 Minuten Gruppenbesprechung CS2_Task1
+10.10.2016 Gruppenbesprechung CS2 Task1
+Aktivitätenverteilung: 
+Jolo, Telesca, Kammermann  Use Case Scenario Sensor
+Sevinc, Lam, Dittli, Kanagarasa  Use Case Scenario Insulinspritze
 
-08.10.2016 jolop1 15:30 - 16:00 Bearbeitung CS2_Task1
-
-10.10.2016 12.00 Uhr - 12.45 Uhr, 45 Minuten Gruppengesprechung CS2_Task1
-Aktivitätenverteilung: Jolo, Telesca, Kammermann --> Use Case Scenario Sensor
-Sevinc, Lam, Dittli, Kanagarasa --> Use Casa Scenario Insulinspritze
-
-Use Case Scenario fertig am: Donnerstag, 13.10.2016
-10.10.2016 12:45 - 13:30, 45 minuten Jolo, Telesca Bearbeitung Use Case Scenario (Sensor)
-
-12.10.2016 10.00 - 10.45, 45 Minuten Jolo, bearbeitung CS2_Task2 Aktivitätsdiagramm 
-13.10.2016 8.20 - 08.45, 25 minutes kanagarasa , Ergaenzung der Scenario Insulinspritze
-13.10.2016 21.30 - 22.15, 45 Minuten Dittli, Überprüfung Insulinspritze
-15.10.2016 10.45 - 11.15, 30 Minuten Jolo, Fragen für Interview ausdenken
+Use Case Scenario soll am Donnerstag, 13.10.2016 fertig sein
