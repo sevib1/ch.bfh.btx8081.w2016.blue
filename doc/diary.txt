@@ -35,7 +35,7 @@ Nächste Teambesprechung von Task 2 am Mo, 03.10.2016, um 12.00 Uhr
 
 10.10.2016 Gruppenbesprechung CS2 Task1
 Aktivitätenverteilung: 
-Jolo, Telesca, Kammermann  Use Case Scenario Sensor
-Sevinc, Lam, Dittli, Kanagarasa  Use Case Scenario Insulinspritze
+Jolo, Telesca, Kammermann --> Use Case Scenario Sensor
+Sevinc, Lam, Dittli, Kanagarasa --> Use Case Scenario Insulinspritze
 
 Use Case Scenario soll am Donnerstag, 13.10.2016 fertig sein
