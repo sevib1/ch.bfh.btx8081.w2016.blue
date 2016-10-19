@@ -39,3 +39,7 @@ Jolo, Telesca, Kammermann --> Use Case Scenario Sensor
 Sevinc, Lam, Dittli, Kanagarasa --> Use Case Scenario Insulinspritze
 
 Use Case Scenario soll am Donnerstag, 13.10.2016 fertig sein
+
+17.10.2016 Gruppenbesprechung der Interviewfragen
+	Kanagarasa, Dittli, Kammermann, Jolo --> Zuständig für die Fertigstellung der Fragen
+	Lam, Sevinc, Telesca --> Durchführung des Interviews am Freitag, 21.10.2016
