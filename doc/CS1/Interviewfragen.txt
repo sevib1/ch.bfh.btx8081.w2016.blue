@@ -1,8 +1,0 @@
-- welche Betreuer/Behandelnde könnte man in das System integrieren?
-
-- würden es ihnen die Arbeit erleichtern, wenn man mittels der Einlesung der 
-	Krankenkassenakrte die Stammdaten des Patienten direkt im System hätte?
-
-- möchten sie die Informationen zu einem Patienten mit anderen Ärzten teilen können ?
-
-- 
