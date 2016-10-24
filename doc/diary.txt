@@ -24,6 +24,7 @@ Diary
 Claudia Telesca (Verantwortliche)
 
 
+
 29.09.2016
 Teambesprechung Task1
 Fehlerbehebung commiten aus Eclipse 
