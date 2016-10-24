@@ -50,4 +50,4 @@ Aufgabenverteilung:
 	- Kangarasa: finale Storyboards zeichnen
 	- Dittli, Sevinc, Kanagarasa: Prototyp
 	- Telesca, Jolo: Dokumentation Design Thinking, Präsentation
-	- Aufteilung Präsentation: Dittli (Prototyp), Kammermann (Storyboard), Lam (Interview)
+	- Aufteilung Präsentation: Dittli (Prototyp), Kammermann (Storyboard,Scoping), Lam (Interview)
