@@ -1,0 +1,14 @@
+Prototyp Software
+
+Erklärung:
+Das Datenformat (.vp) kann nur von JustinmindPrototyper geöffnet werden,
+um Änderungen an dem Prototyp vorzunehmen, muss das JustInMind-Programm zuerst
+installiert werden.
+
+Download Link:
+https://www.justinmind.com/
+
+Version:
+7.4.0
+
+
