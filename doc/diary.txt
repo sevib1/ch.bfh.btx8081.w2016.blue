@@ -51,3 +51,11 @@ Aufgabenverteilung:
 	- Dittli, Sevinc, Kanagarasa: Prototyp
 	- Telesca, Jolo: Dokumentation Design Thinking, Präsentation
 	- Aufteilung Präsentation: Dittli (Prototyp), Kammermann (Storyboard,Scoping), Lam (Interview)
+
+24.11.2016 Teambesprechung CS1_Task7
+Aufgabenverteilung:
+	- Kanagarasa: Fertigstellung Domain-Diagramm
+	- Dittli, Sevinc, Jolo, Telesca: Sequenzdiagramm	
+	- Aufteilung Präsentation: Kanagarasa, Kammermann
+Nächste Besprechung fürs Seqenzdiagramm: Donnerstag 17.11.2016
+	
