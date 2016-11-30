@@ -5,7 +5,6 @@
 
 	<groupId>ch.bfh.btx.8081.w.2016.blue</groupId>
 	<artifactId>Fazzoletti</artifactId>
-	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Fazzoletti</name>
 
