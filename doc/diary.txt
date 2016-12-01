@@ -59,3 +59,11 @@ Aufgabenverteilung:
 	- Aufteilung Präsentation: Kanagarasa, Kammermann
 Nächste Besprechung fürs Seqenzdiagramm: Donnerstag 17.11.2016
 	
+28.11.2016 Teambesprechung CS1_Task9 und Task10
+Aufgabenverteilung_
+	- Kammermann, Jolo, Lam: IDE Setup durchführen und die anderen informieren
+	- Telesca, Jolo: ganze Dokumentation
+	- Sevinc: Block- und Packagediagramm
+	- Dittli: Backlog
+	- Kanagarasa: UML-Diagramm
+Nächste Gruppenbesrechung: 01.12.2016
