@@ -4,9 +4,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ch.bfh.btx.8081.w.2016.blue</groupId>
-	<artifactId>Fazzoletti</artifactId>
+	<artifactId>Adimed</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Fazzoletti</name>
+	<name>Adimed</name>
 
 	<prerequisites>
 		<maven>3</maven>
