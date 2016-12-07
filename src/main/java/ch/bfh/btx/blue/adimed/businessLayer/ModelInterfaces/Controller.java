@@ -1,4 +1,4 @@
-package ModelInterfaces;
+package ch.bfh.btx.blue.adimed.businessLayer.ModelInterfaces;
 
 public interface Controller {
 
