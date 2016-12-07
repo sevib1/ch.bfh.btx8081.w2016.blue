@@ -19,6 +19,12 @@ public class Agenda {
 	
 	public Agenda(){}
 	
+	public Agenda(GregorianCalendar d, Time t, boolean a){
+		datum = d;
+		zeit = t;
+		appeared = a;
+	}
+	
 	public void getTermin() {
 	}
 
