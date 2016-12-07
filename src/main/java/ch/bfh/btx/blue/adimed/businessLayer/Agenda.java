@@ -17,6 +17,7 @@ public class Agenda {
 	private Time zeit; 
 	private boolean appeared = true;
 	
+	public Agenda(){}
 	
 	public void getTermin() {
 	}
