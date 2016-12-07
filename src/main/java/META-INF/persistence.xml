@@ -4,7 +4,7 @@
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
 	<persistence-unit name="name in the brackets" transaction-type="RESOURCE_LOCAL">
-		<class>ch.bfh.btx.blue.admined.businessLayer.Agenda</class>
+		<class>ch.bfh.btx.blue.adimed.businessLayer.Agenda</class>
 		<properties>
  	
  			<!-- MS SQL SERVER -->
