@@ -1,5 +1,8 @@
+package ch.bfh.btx.blue.adimed.businessLayer;
+
 import java.sql.Time;
 import java.util.GregorianCalendar;
+
 
 public class Agenda {
 	
