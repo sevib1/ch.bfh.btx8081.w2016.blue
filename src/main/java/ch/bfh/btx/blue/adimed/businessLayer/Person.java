@@ -1,3 +1,5 @@
+package ch.bfh.btx.blue.adimed.businessLayer;
+
 import java.util.GregorianCalendar;
 
 public class Person {
