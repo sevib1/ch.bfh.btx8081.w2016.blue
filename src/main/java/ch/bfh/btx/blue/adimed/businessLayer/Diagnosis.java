@@ -19,7 +19,7 @@ public class Diagnosis {
 	}
 	
 	
-	public String getDiagnose() {
+	public String getDiagnosis() {
 		return "ersetzen";
 	}
 
