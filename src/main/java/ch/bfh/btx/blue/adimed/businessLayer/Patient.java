@@ -6,14 +6,23 @@ public class Patient extends Person {
 
 	private String insurance;
 	private int insuranceNr;
+	
+	private String allergies;
 
 	public Patient() {
 
 	}
+	
+	public Patient (String insurance, int insuranceNr, String allergies) {
+		this.insurance = insurance;
+		this.insuranceNr = insuranceNr;
+		this.allergies = allergies;
+	}
 
-	private final ArrayList<String> allergies = new ArrayList<String>();
+	
 
-	public void getPatient() {
+	public String getPatient() {
+		return "ersetzen";
 	}
 
 }
