@@ -6,10 +6,17 @@ public class Doctor extends ServiceProviders {
 	private String specialization;
 
 	public Doctor() {
-		
+
 	}
 
-	public void getDoctor() {
+	public Doctor(String titel, String specialization) {
+		this.titel = titel;
+		this.specialization = specialization;
+
+	}
+
+	public String getDoctor() {
+		return "ersetzen";
 	}
 
 }

@@ -1,28 +1,31 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
-
 public class Login {
-	
+
 	private String userName;
 	private String password;
-	
+
 	public Login() {
-		
+
 	}
-	
-	public void login(){
+
+	public Login(String userName, String password) {
+		this.userName = userName;
+		this.password = password;
+
 	}
-	
-	public void check(){
+
+	public void login() {
 	}
-	
-	public void forget(){
+
+	public boolean check() {
+		return true;
 	}
-	
-	public void toMail(){
+
+	public void forget() {
 	}
-	
-	
-	
+
+	public void toMail() {
+	}
 
 }

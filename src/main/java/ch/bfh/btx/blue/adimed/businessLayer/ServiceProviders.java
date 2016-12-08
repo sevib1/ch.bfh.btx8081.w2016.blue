@@ -9,7 +9,12 @@ public class ServiceProviders extends Person {
 
 	}
 
-	public void getLeistungserbringer() {
+	public ServiceProviders(String email) {
+		this.email = email;
+
+	}
+	public String getServiceProviders() {
+		return "ersetzen";
 	}
 
 }

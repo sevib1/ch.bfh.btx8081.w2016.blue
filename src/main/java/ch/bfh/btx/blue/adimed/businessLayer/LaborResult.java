@@ -5,14 +5,22 @@ import java.util.GregorianCalendar;
 public class LaborResult {
 	
 	private GregorianCalendar laborDate;
-	private String untersuchungsArt;
+	private String typeOfExamination;
 	private boolean results;
 	
 	public LaborResult() {
 		
 	}
 	
-	public void getLabor() {
+public LaborResult(GregorianCalendar laborDate, String typeOfExamination, boolean results) {
+		this.laborDate = laborDate;
+		this.typeOfExamination = typeOfExamination;
+		this.results = results;
+		
+	}
+	
+	public String getLabor() {
+		return "ersetzen";
 	}
 
 }

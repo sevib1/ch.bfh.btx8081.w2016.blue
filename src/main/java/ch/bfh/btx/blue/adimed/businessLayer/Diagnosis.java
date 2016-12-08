@@ -12,14 +12,15 @@ public class Diagnosis {
 		
 	}
 	
-	public Diagnosis(GregorianCalendar d, String s, String a) {
-		diagnosisDate = d;
-		status = s;
-		diagnosis = a;
+	public Diagnosis(GregorianCalendar diagnosisDate, String status, String diagnosis) {
+		this.diagnosisDate = diagnosisDate;
+		this.status = status;
+		this.diagnosis = diagnosis;
 	}
 	
 	
-	public void getDiagnose() {
+	public String getDiagnose() {
+		return "ersetzen";
 	}
 
 }
