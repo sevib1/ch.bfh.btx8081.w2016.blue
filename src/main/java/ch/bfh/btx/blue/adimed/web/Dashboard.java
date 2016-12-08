@@ -52,6 +52,12 @@ public class Dashboard extends VerticalLayout{
 		patIDField = new TextField("Patienten-ID");
 		patIDField.setEnabled(false);
 		patIDField.setValue("12345678");
+		patIDField = new TextField("Name:");
+		patIDField.setEnabled(false);
+		patIDField.setValue("Panzerotti");
+		patIDField = new TextField("Vorname:");
+		patIDField.setEnabled(false);
+		patIDField.setValue("Marco");
 		
 		adminForm.addComponents(patIDField);
 		adminPanel.setContent(adminForm);
