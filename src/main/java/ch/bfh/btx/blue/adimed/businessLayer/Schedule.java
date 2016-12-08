@@ -1,3 +1,5 @@
+package ch.bfh.btx.blue.adimed.businessLayer;
+
 import java.util.ArrayList;
 
 import ModelInterfaces.Bedienung;
@@ -5,6 +7,10 @@ import ModelInterfaces.Bedienung;
 public class Schedule implements Controller {
 
 	private final ArrayList<Patient> pListe = new ArrayList<Patient>();
+	
+	public Schedule() {
+		
+	}
 
 	public void getTime() {
 	}

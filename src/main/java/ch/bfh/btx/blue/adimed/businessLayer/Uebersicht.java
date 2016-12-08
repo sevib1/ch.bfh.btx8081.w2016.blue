@@ -1,3 +1,5 @@
+package ch.bfh.btx.blue.adimed.businessLayer;
+
 import java.util.ArrayList;
 
 import ModelInterfaces.Bedienung;
@@ -5,6 +7,8 @@ import ModelInterfaces.Bedienung;
 public class Uebersicht implements Controller {
 	
 	private final ArrayList<> cList = new ArrayList<>();
+	
+	public 
 	
 	public void printScreen() {
 	}
