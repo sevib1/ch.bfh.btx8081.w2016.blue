@@ -2,15 +2,15 @@ package ch.bfh.btx.blue.adimed.businessLayer;
 
 public class Doctor extends ServiceProviders {
 
-	private String titel;
+	private String title;
 	private String specialization;
 
 	public Doctor() {
 
 	}
 
-	public Doctor(String titel, String specialization) {
-		this.titel = titel;
+	public Doctor(String title, String specialization) {
+		this.title = title;
 		this.specialization = specialization;
 
 	}
