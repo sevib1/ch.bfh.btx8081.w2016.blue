@@ -9,12 +9,11 @@ public class Medication {
 	private String mediName;
 	private String mediDosis;
 	private boolean mediState;
-	private String compendium;
 	private String applicationForm;
 	private String takingForm;
 	private String comment;
 	
-	//private Compendium compendium; // Association
+	private Compendium compendium; // Association
 	private List<ServiceProviders> ServiceProviders; // Association
 
 	public Medication() {
@@ -22,7 +21,7 @@ public class Medication {
 	}
 
 	public Medication(GregorianCalendar dateOfgivenMedical, String mediName, String mediDosis, boolean mediState,
-			String compendium, String applicationForm, String takingForm, String comment) {
+			Compendium compendium, String applicationForm, String takingForm, String comment) {
 		this.dateOfgivenMedical = dateOfgivenMedical;
 		this.mediName = mediName;
 		this.mediDosis = mediDosis;
