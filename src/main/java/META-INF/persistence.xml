@@ -5,21 +5,17 @@
 
 	<persistence-unit name="medi" transaction-type="RESOURCE_LOCAL">
 		<properties>
- 	
- 			<!-- MS SQL SERVER -->
-  			<property name="javax.persistence.jdbc.driver" value="net.sourceforge.jtds.jdbc.Driver" /> 
- 			<property name="javax.persistence.jdbc.url" value="jdbc:jtds:sqlserver://corpus.bfh.ch:55783;DatabaseName=SWE_2016_2" /> 
- 			<property name="javax.persistence.jdbc.user" value="SWE_2016_2_owner" /> 
- 			<property name="javax.persistence.jdbc.password" value="SWE_2016_2_owner$w" /> 
 
- 			<!-- HSQLDB -->
-<!--  			<property name="javax.persistence.jdbc.driver" value="net.sourceforge.jtds.jdbc.Driver" /> 									-->	
-<!--			<property name="javax.persistence.jdbc.url" value="jdbc:jtds:sqlserver://corpus.bfh.ch:55783;DatabaseName=SWE_2016_2" />	-->
-<!--	    	<property name="username" value="SWE_2016_2_owner" />																		-->
-<!--    	    <property name="password" value="SWE_2016_2_owner$w" />																		-->
- 
- 			<property name="eclipselink.ddl-generation" value="create-tables" />
-			<property name="eclipselink.ddl-generation.output-mode"	value="both" />
+			<!-- MS SQL SERVER -->
+			<property name="javax.persistence.jdbc.driver" value="net.sourceforge.jtds.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:jtds:sqlserver://corpus.bfh.ch:55783;DatabaseName=SWE_2016_2" />
+			<property name="javax.persistence.jdbc.user" value="SWE_2016_2_owner" />
+			<property name="javax.persistence.jdbc.password" value="SWE_2016_2_owner$w" />
+		
+			<property name="eclipselink.ddl-generation" value="create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode"
+				value="both" />
 		</properties>
 	</persistence-unit>
 </persistence>

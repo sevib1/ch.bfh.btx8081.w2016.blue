@@ -2,9 +2,13 @@ package ch.bfh.btx.blue.adimed.businessLayer;
 
 import java.util.GregorianCalendar;
 
-public class Person {
-
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Table(name="Person")
+@Entity public class Person {
+	@Id
 	private int personID;
+	
 	private String firstName;
 	private String lastName;
 	private String street;
