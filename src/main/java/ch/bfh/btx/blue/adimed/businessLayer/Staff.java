@@ -1,15 +1,15 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
 
-public class ServiceProviders extends Person {
+public class Staff extends Person {
 
 	private String email;
 
-	public ServiceProviders() {
+	public Staff() {
 
 	}
 
-	public ServiceProviders(String email) {
+	public Staff(String email) {
 		this.email = email;
 
 	}
