@@ -1,6 +1,8 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
+import javax.persistence.Entity;
 
+@Entity
 public class Staff extends Person {
 
 	private String email;
