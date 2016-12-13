@@ -1,7 +1,12 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
-public class Doctor extends ServiceProviders {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class Doctor extends Staff {
+
+	private int pID;
 	private String title;
 	private String specialization;
 
