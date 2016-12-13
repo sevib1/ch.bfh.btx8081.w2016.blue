@@ -4,6 +4,16 @@
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
 	<persistence-unit name="medi" transaction-type="RESOURCE_LOCAL">
+	<class>ch.bfh.btx.blue.adimed.businessLayer.Agenda</class>
+	<class>ch.bfh.btx.blue.adimed.businessLayer.Case</class>
+	<class>ch.bfh.btx.blue.adimed.businessLayer.Compendium</class>
+	<class>ch.bfh.btx.blue.adimed.businessLayer.Diagnosis</class>
+	<class>ch.bfh.btx.blue.adimed.businessLayer.Doctor</class>
+	<class>ch.bfh.btx.blue.adimed.businessLayer.LaborResult</class>
+	<class>ch.bfh.btx.blue.adimed.businessLayer.Medication</class>
+	<class>ch.bfh.btx.blue.adimed.businessLayer.Person</class>
+	<class>ch.bfh.btx.blue.adimed.businessLayer.Patient</class>
+	<class>ch.bfh.btx.blue.adimed.businessLayer.Staff</class>
 		<properties>
 
 			<!-- MS SQL SERVER -->
