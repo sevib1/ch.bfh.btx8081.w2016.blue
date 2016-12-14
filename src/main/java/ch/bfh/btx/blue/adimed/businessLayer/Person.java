@@ -4,13 +4,12 @@ import java.util.GregorianCalendar;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
 @Entity public class Person {
 	@Id
 	private int pID;
 	
 	private String firstName;
-	private String lastName;
+	private String Name;
 	private String street;
 	private int postalCode;
 	private String city;
@@ -26,7 +25,7 @@ import javax.persistence.Id;
 			GregorianCalendar birthDate, int phoneNb, char gender) {
 		this.pID = personID;
 		this.firstName = firstName;
-		this.lastName = lastName;
+		this.Name = Name;
 		this.street = street;
 		this.postalCode = postalCode;
 		this.city = city;

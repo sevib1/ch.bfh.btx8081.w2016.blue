@@ -67,10 +67,12 @@ public class Dashboard extends VerticalLayout{
 		adminDiagnoseLaborLayout.setSpacing(true);
 		adminPanel = new Panel("Stamm- und Bewegungsdaten");
 		adminForm = new FormLayout();
+		
+		
 		patIDField = new TextField("Patienten-ID");
 		patIDField.setEnabled(false);
 		patIDField.setValue("12345678");
-		patIDField.setWidth("70%");
+		patIDField.setEnabled(false);
 		
 		nameField = new TextField("Name:");
 		nameField.setEnabled(false);
@@ -103,7 +105,7 @@ public class Dashboard extends VerticalLayout{
 		streetField.setValue("Fazzolettistrasse 4");
 		streetField.setWidth("70%");
 		
-		postCodeField = new TextField("Adresse:");
+		postCodeField = new TextField("Postleitzahl, Stadt:");
 		postCodeField.setEnabled(false);
 		postCodeField.setValue("45689 Fazzolettitown");
 		postCodeField.setWidth("70%");
@@ -172,7 +174,7 @@ public class Dashboard extends VerticalLayout{
 		mediGrid.addColumn("Compendium", String.class);
 		mediGrid.addColumn("Bereit", String.class);
 		mediGrid.addColumn("Applikationsform", String.class);
-		mediGrid.addColumn("Einahme", String.class);
+		mediGrid.addColumn("Einnahme", String.class);
 		mediGrid.addColumn("Datum", String.class);
 		mediGrid.addColumn("Bemerkung", String.class);
 		mediGrid.setSizeFull();

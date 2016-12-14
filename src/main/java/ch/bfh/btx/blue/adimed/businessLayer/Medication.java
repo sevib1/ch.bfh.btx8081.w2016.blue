@@ -14,6 +14,7 @@ public class Medication {
 	private String comment;
 	
 	private Compendium compendium; // Association
+	private List<Staff> ServiceProviders; // Association
 	private List<Staff> Staffs; // Association
 
 	public Medication() {
