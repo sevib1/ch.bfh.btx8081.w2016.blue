@@ -4,20 +4,26 @@ import java.sql.Time;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Agenda {
-	private GregorianCalendar date;
-	private Time time;
-	private boolean appeared;
 	
+	@Id
+	private int CID;
+	private GregorianCalendar agendaDate;
+	private boolean appeared;
+
 	private List<Case> Case; // Association
 
 	public Agenda() {
 	}
 
-	public Agenda(GregorianCalendar d, Time t, boolean a) {
-		date = d;
-		time = t;
-		appeared = a;
+	public Agenda(GregorianCalendar agendaDate, int CID, boolean apeared) {
+		this.agendaDate = agendaDate;
+		this.CID = CID;
+		this.appeared = appeared;
 	}
 
 	public void getAppointement() {
