@@ -7,7 +7,7 @@ import javax.persistence.Id;
 @Entity
 public class Patient extends Person {
 
-	@Id
+	
 	private int pId;
 	private int cId;
 	private String insurance;
