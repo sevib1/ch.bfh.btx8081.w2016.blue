@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 
 
 
-@Entity
+@Entity @IdClass(MedicationId.class)
 public class Medication {
 	
 	@Id
