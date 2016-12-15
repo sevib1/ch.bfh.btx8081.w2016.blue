@@ -1,16 +1,18 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
-import java.sql.Time;
 import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Agenda {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int CID;
 	private GregorianCalendar agendaDate;
 	private boolean appeared;
