@@ -5,7 +5,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Staff extends Person {
-	@Id
+	
 	private int pID;
 
 	private String email;

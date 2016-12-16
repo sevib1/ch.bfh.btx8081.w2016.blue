@@ -2,6 +2,8 @@ package ch.bfh.btx.blue.adimed.web;
 
 import java.util.Date;
 import com.vaadin.annotations.Theme;
+import com.vaadin.navigator.View;
+import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
@@ -10,6 +12,7 @@ import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Button.ClickEvent;
 
 /*
  * The Patient Schedule displays all the appointment of the day 
@@ -19,44 +22,47 @@ import com.vaadin.ui.VerticalLayout;
  * 
  */
 @Theme("mytheme")
-public class Patienten_Schedule extends VerticalLayout {
-	
+public class PatientenSchedule extends VerticalLayout implements View {
+
 	HorizontalLayout TitleLayout;
 	Label title;
 	DateField date;
 	Button logout;
 	VerticalLayout scheduleLayout;
-	Grid scheduleGrid ;
+	Grid scheduleGrid;
 	HorizontalLayout BottomLayout;
 	Button problems;
 	Label synchronisierung;
 	Button Sync;
 	VerticalLayout allBox;
-	
-	
-	
 
-	public Patienten_Schedule() {
+	public PatientenSchedule() {
 		// Title
-		HorizontalLayout TitleLabel = new HorizontalLayout();
-		Label title = new Label("Patienten Schedule");
-		
+		TitleLayout = new HorizontalLayout();
+		title = new Label("Patienten Schedule");
 
-		DateField date = new DateField();
+		date = new DateField();
 		date.setValue(new Date());
 		date.setDateFormat("dd.MM.yyyy");
 
-		Button logout = new Button("Logout");
-		TitleLabel.addComponent(title);
-		TitleLabel.addComponent(date);
+		logout = new Button("Logout", new Button.ClickListener() {
+			
+			public void buttonClick(ClickEvent event) {
+				 getUI().getNavigator().navigateTo(MainPage.DASHBOARD);
+				
+			}
+		});
+		
+		TitleLayout.addComponent(title);
+		TitleLayout.addComponent(date);
 
-		TitleLabel.addComponent(logout);
-		TitleLabel.setMargin(true);
-		TitleLabel.setSpacing(true);
+		TitleLayout.addComponent(logout);
+		TitleLayout.setMargin(true);
+		TitleLayout.setSpacing(true);
 
 		// Schedule
-		VerticalLayout scheduleLayout = new VerticalLayout();
-		Grid scheduleGrid = new Grid();
+		scheduleLayout = new VerticalLayout();
+		scheduleGrid = new Grid();
 		scheduleGrid.addColumn("Versicherungsnummer", String.class);
 		scheduleGrid.addColumn("Name", String.class);
 		scheduleGrid.addColumn("Vorname", String.class);
@@ -65,7 +71,7 @@ public class Patienten_Schedule extends VerticalLayout {
 		scheduleGrid.addColumn("Termin", String.class);
 		scheduleGrid.addColumn("erscheinen", String.class);
 		scheduleGrid.addColumn("Details", String.class);
-		
+
 		scheduleGrid.addRow("834734667", "Panzoretti", "Marco", "23.08.1944", "m", "Freitag", "", "Details");
 		scheduleGrid.addRow("834787401", "Hugentobler", "Franziska", "12.2.1969", "w", "Freitag", "", "Details");
 
@@ -74,10 +80,10 @@ public class Patienten_Schedule extends VerticalLayout {
 		scheduleLayout.addComponent(scheduleGrid);
 
 		// Bottom
-		HorizontalLayout BottomLayout = new HorizontalLayout();
-		Button problems = new Button("Probleme");
-		Label synchronisierung = new Label("letzte Synchronisierung: ");
-		Button Sync = new Button("Synchronisieren");
+		BottomLayout = new HorizontalLayout();
+		problems = new Button("Probleme");
+		synchronisierung = new Label("letzte Synchronisierung: ");
+		Sync = new Button("Synchronisieren");
 
 		BottomLayout.addComponent(problems);
 		BottomLayout.setComponentAlignment(problems, Alignment.BOTTOM_LEFT);
@@ -91,11 +97,24 @@ public class Patienten_Schedule extends VerticalLayout {
 		BottomLayout.setSpacing(true);
 
 		// Alle Layout zusammen
-		VerticalLayout allBox = new VerticalLayout();
-		allBox.addComponent(TitleLabel);
+		allBox = new VerticalLayout();
+		allBox.addComponent(TitleLayout);
 		allBox.addComponent(scheduleLayout);
 		allBox.addComponent(BottomLayout);
+		addComponent(allBox);
 
 	}
+
+	@Override
+	public void enter(ViewChangeEvent event) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	// @Override
+	// public void enter(ViewChangeEvent event) {
+	// // TODO Auto-generated method stub
+	//
+	// }
 
 }
