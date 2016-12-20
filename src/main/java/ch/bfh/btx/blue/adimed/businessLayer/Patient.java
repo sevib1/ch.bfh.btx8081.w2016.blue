@@ -21,10 +21,11 @@ public class Patient extends Person {
 
 	}
 	
-	public Patient (String insurance, int insuranceNb, String allergies) {
+	public Patient (String insurance, int insuranceNb, String allergies, Case cas) {
 		this.insurance = insurance;
 		this.insuranceNb = insuranceNb;
 		this.allergies = allergies;
+		this.cas = cas;
 	}
 
 	

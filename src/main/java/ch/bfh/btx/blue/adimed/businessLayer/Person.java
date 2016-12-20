@@ -9,7 +9,7 @@ import javax.persistence.Id;
 	private int pID;
 	
 	private String firstName;
-	private String Name;
+	private String name;
 	private String street;
 	private int postalCode;
 	private String city;
@@ -21,17 +21,23 @@ import javax.persistence.Id;
 
 	}
 
-	public Person(int personID, String firstName, String lastName, String street, int postalCode, String city,
+	public Person(int personID, String firstName, String name, String street, int postalCode, String city,
 			GregorianCalendar birthDate, int phoneNb, char gender) {
 		this.pID = personID;
 		this.firstName = firstName;
-		this.Name = Name;
+		this.name = name;
 		this.street = street;
 		this.postalCode = postalCode;
 		this.city = city;
 		this.birthDate = birthDate;
 		this.phoneNb = phoneNb;
 		this.gender = gender;
+	}
+
+	public Person(String firstName, String name, int phoneNb) {
+		this.firstName = firstName;
+		this.name = name;
+		this.phoneNb = phoneNb;
 	}
 
 	public String getPerson() {

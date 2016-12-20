@@ -1,9 +1,11 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
 import java.util.GregorianCalendar;
- 
+import java.util.List;
+
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,20 +33,21 @@ public class Medication {
 	
 	private String comment;	
 	
-	
-
+	//@OneToOne
 	private Compendium compendium; // Association
-	@OneToOne
-	private Case cas;
+	
+	@OneToMany
+	private List<Case> cases;
+	
 	@ManyToOne
 	private Staff staff; // Association
 
+	
 	public Medication() {
-
 	}
 
 	public Medication(GregorianCalendar dateOfgivenMedical, String mediName, String mediDosis, boolean mediState,
-			Compendium compendium, String applicationForm, String takingForm, String comment) {
+			Compendium compendium, String applicationForm, String takingForm, String comment, List<Case> cases, Staff staff) {
 		this.applyDate = applyDate;
 		this.medName = medName;
 		this.medDosis = medDosis;
@@ -53,6 +56,8 @@ public class Medication {
 		this.applyForm = applicationForm;
 		//this.takingForm = takingForm;
 		this.comment = comment;
+		this.cases = cases;
+		this.staff = staff;
 
 	}
 

@@ -1,11 +1,13 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -17,18 +19,18 @@ public class LaborResult {
 	private String typeOfExamination;
 	private boolean results;
 	
-	@OneToOne
-	private Case cas;
+	@OneToMany
+	private List<Case> cases;
 	
 	public LaborResult() {
 		
 	}
 	
-public LaborResult(GregorianCalendar laborDate, String typeOfExamination, boolean results) {
+public LaborResult(GregorianCalendar laborDate, String typeOfExamination, boolean results, List<Case> cases) {
 		this.laborDate = laborDate;
 		this.typeOfExamination = typeOfExamination;
 		this.results = results;
-		
+		this.cases = cases;
 	}
 	
 	public String getLabor() {
