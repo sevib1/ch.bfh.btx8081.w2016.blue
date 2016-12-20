@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class LaborResult {
@@ -15,6 +16,9 @@ public class LaborResult {
 	private GregorianCalendar laborDate;
 	private String typeOfExamination;
 	private boolean results;
+	
+	@OneToOne
+	private Case cas;
 	
 	public LaborResult() {
 		

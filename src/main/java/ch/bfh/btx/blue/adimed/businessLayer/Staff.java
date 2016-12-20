@@ -1,7 +1,10 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Staff extends Person {
@@ -15,6 +18,9 @@ public class Staff extends Person {
 	private String userName;
 	
 	private String passWord;
+	
+	@OneToMany
+	private List<Medication> medications;
 
 	public Staff() {
 

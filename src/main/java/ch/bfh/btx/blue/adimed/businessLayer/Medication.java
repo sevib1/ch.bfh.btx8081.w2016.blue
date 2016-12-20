@@ -1,10 +1,10 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
 import java.util.GregorianCalendar;
-import java.util.List;
  
 import javax.persistence.Id;
-import javax.persistence.IdClass;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -35,11 +35,10 @@ public class Medication {
 	
 
 	private Compendium compendium; // Association
-	private List<Staff> Staff; // Association
-
-	
-	private List<Staff> ServiceProviders; // Association
-	private List<Staff> Staffs; // Association
+	@OneToOne
+	private Case cas;
+	@ManyToOne
+	private Staff staff; // Association
 
 	public Medication() {
 

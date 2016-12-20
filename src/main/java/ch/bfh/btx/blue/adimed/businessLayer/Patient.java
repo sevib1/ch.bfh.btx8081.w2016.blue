@@ -3,6 +3,7 @@ package ch.bfh.btx.blue.adimed.businessLayer;
 import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Patient extends Person {
@@ -13,6 +14,8 @@ public class Patient extends Person {
 	private String insurance;
 	private int insuranceNb;
 	private String allergies;
+	@OneToOne
+	private Case cas;
 
 	public Patient() {
 
