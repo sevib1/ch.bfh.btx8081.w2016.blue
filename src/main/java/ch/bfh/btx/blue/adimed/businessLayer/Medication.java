@@ -13,7 +13,6 @@ import javax.persistence.GenerationType;
 
 
 @Entity 
-//@IdClass(MedicationId.class)
 public class Medication {
 	
 	@Id
