@@ -1,10 +1,8 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
-import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -17,11 +15,6 @@ public class Patient extends Person {
 	private String street;
 	private int postalCode;
 	private String city;
-	
-	
-
-
-
 	private GregorianCalendar birthDate;
 	private int phoneNb;
 	private char gender;
