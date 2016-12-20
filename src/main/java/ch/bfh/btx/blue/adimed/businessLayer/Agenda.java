@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Agenda {
@@ -16,16 +17,18 @@ public class Agenda {
 	private int CID;
 	private GregorianCalendar agendaDate;
 	private boolean appeared;
-
-	private List<Case> Case; // Association
+	
+	@OneToMany
+	private List<Case> cases; // Association
 
 	public Agenda() {
 	}
 
-	public Agenda(GregorianCalendar agendaDate, int CID, boolean apeared) {
+	public Agenda(GregorianCalendar agendaDate, int CID, boolean apeared, List<Case> cases) {
 		this.agendaDate = agendaDate;
 		this.CID = CID;
 		this.appeared = appeared;
+		this.cases = cases;
 	}
 
 	public void getAppointement() {
