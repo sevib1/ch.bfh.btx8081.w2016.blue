@@ -22,6 +22,10 @@ import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.renderers.ButtonRenderer;
 import com.vaadin.ui.renderers.ClickableRenderer.RendererClickEvent;
+
+import ch.bfh.btx.blue.adimed.businessLayer.Patient;
+import ch.bfh.btx.blue.adimed.businessLayer.Schedule;
+
 import com.vaadin.ui.renderers.Renderer;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.CheckBox;
@@ -50,7 +54,7 @@ public class PatientenSchedule extends VerticalLayout implements View {
 	VerticalLayout allBox;
 	CheckBox box;
 	Table scheduleTable;
-
+	
 	public PatientenSchedule() {
 		// Title
 		TitleLayout = new HorizontalLayout();
@@ -77,8 +81,9 @@ public class PatientenSchedule extends VerticalLayout implements View {
 		
 	
 		// Schedule
-		List schedule = new ArrayList();
-		
+		 ArrayList<Schedule> sList = new ArrayList<Schedule>();
+			
+	
 		scheduleLayout = new VerticalLayout();
 		scheduleGrid = new Grid();
 		scheduleGrid.addColumn("Versicherungsnummer", String.class);
@@ -89,10 +94,13 @@ public class PatientenSchedule extends VerticalLayout implements View {
 		scheduleGrid.addColumn("Termin", String.class);
 		scheduleGrid.addColumn("erscheinen", String.class);
 		scheduleGrid.addColumn("Details", Button.class);
-		scheduleGrid.addColumn("edit", Button.class);
+		
 		
 		detail = new Button ("detail");
 		
+		
+		
+		sList.add(new Schedule());
 		scheduleGrid.addRow("834734667", "Panzoretti", "Marco", "23.08.1944", "m", "Freitag", "", detail);
 		//scheduleGrid.addRow("834787401", "Hugentobler", "Franziska", "12.2.1969", "w", "Freitag", "", "Details");
 		
