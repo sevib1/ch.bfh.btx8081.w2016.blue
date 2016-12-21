@@ -117,12 +117,12 @@ public class Dashboard extends VerticalLayout implements View {
 		phoneNbField.setValue("057 343 34 66");
 		phoneNbField.setWidth("70%");
 
-		streetField = new TextField("Adresse:");
+		streetField = new TextField("Strasse:");
 		streetField.setEnabled(false);
 		streetField.setValue("Fazzolettistrasse 4");
 		streetField.setWidth("70%");
 
-		postCodeField = new TextField("Adresse:");
+		postCodeField = new TextField("PLZ, Ort:");
 		postCodeField.setEnabled(false);
 		postCodeField.setValue("45689 Fazzolettitown");
 		postCodeField.setWidth("70%");
