@@ -2,9 +2,17 @@ package ch.bfh.btx.blue.adimed.businessLayer;
 
 import java.util.GregorianCalendar;
 
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-@Entity public class Person {
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.MappedSuperclass;
+@Entity 
+
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+public class Person {
+	
 	@Id
 	private int pID;
 	
@@ -45,5 +53,10 @@ import javax.persistence.Id;
 		
 		return "ersetzen";
 
+	}
+	
+	public String toString(){
+		return firstName + " "+ name;
+		
 	}
 }
