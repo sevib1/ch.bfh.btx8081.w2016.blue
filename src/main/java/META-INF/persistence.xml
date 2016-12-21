@@ -14,7 +14,8 @@
 	<class>ch.bfh.btx.blue.adimed.businessLayer.Patient</class>
 	<class>ch.bfh.btx.blue.adimed.businessLayer.Staff</class> -->
 	
-	<class>ch.bfh.btx.blue.adimed.businessLayer.Doctor</class>
+	<!--<class>ch.bfh.btx.blue.adimed.businessLayer.Doctor</class>-->
+	<class>ch.bfh.btx.blue.adimed.businessLayer.Person</class> 
 		<properties>
 
 			<!-- MS SQL SERVER -->

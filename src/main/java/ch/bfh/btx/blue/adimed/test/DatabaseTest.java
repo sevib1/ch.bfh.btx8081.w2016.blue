@@ -16,8 +16,8 @@ public class DatabaseTest {
 
 	public static void main(String[] args) {
 		
-		//JPAConnection hello = new JPAConnection();
-		//hello.connection();
+		JPAConnection hello = new JPAConnection();
+		hello.connection();
 		// TODO Auto-generated method stub
 	//	EntityManagerFactory emf = Persistence.createEntityManagerFactory("medi");
 

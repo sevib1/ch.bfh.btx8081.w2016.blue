@@ -11,36 +11,38 @@ import javax.persistence.Id;
 	private String firstName;
 	private String name;
 	private String street;
-	private int postalCode;
+	private int zip;
 	private String city;
 	private GregorianCalendar birthDate;
-	private int phoneNb;
-	private char gender;
+	private String phoneNb;
+	private char sex;
 
 	public Person() {
 
 	}
 
 	public Person(int personID, String firstName, String name, String street, int postalCode, String city,
-			GregorianCalendar birthDate, int phoneNb, char gender) {
+			GregorianCalendar birthDate, String phoneNb, char gender) {
 		this.pID = personID;
 		this.firstName = firstName;
 		this.name = name;
 		this.street = street;
-		this.postalCode = postalCode;
+		this.zip = postalCode;
 		this.city = city;
 		this.birthDate = birthDate;
 		this.phoneNb = phoneNb;
-		this.gender = gender;
+		this.sex = gender;
 	}
 
-	public Person(String firstName, String name, int phoneNb) {
+	public Person(String firstName, String name, String phoneNb) {
 		this.firstName = firstName;
 		this.name = name;
 		this.phoneNb = phoneNb;
 	}
 
 	public String getPerson() {
+		
+		
 		return "ersetzen";
 
 	}

@@ -20,7 +20,7 @@ public class Staff extends Person {
 	
 	private String firstName;
 	private String name;
-	private int phoneNb;
+	private String phoneNb;
 	
 	@OneToMany
 	private List<Medication> medications;
@@ -29,7 +29,7 @@ public class Staff extends Person {
 
 	}
 
-	public Staff(String firstName, String name, int phoneNb, String eMail, int pId) {
+	public Staff(String firstName, String name, String phoneNb, String eMail, int pId) {
 		super(firstName,name, phoneNb);
 		this.eMail = eMail;
 		this.pId = pId;

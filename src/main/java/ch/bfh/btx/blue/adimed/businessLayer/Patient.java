@@ -16,7 +16,7 @@ public class Patient extends Person {
 	private int postalCode;
 	private String city;
 	private GregorianCalendar birthDate;
-	private int phoneNb;
+	private String phoneNb;
 	private char gender;
 	
 	private int cId;
@@ -32,7 +32,7 @@ public class Patient extends Person {
 	}
 	
 	public Patient(int personID, String firstName, String name, String street, int postalCode, String city,
-			GregorianCalendar birthDate, int phoneNb, char gender, String insurance, int insuranceNb,
+			GregorianCalendar birthDate, String phoneNb, char gender, String insurance, int insuranceNb,
 			String allergies, Case cas) {
 		super(personID, firstName, name, street, postalCode, city, birthDate, phoneNb, gender);
 		this.insurance = insurance;

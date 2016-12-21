@@ -17,21 +17,20 @@ public class JPAConnection {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("medi");
 
 		EntityManager em = emf.createEntityManager();
-		int id = 0;
+		int id = 1000;
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
-		Person p = em.find(Person.class, id);
-		//String statement = "SELECT p FROM Person p";
-		//Query q = em.createQuery(statement);
+
 		
-		//System.out.println(q.getResultList());
+		Person p = em.find(Person.class, id);
+		
 		Query q = em.createQuery("select p from Person p");
 		List<Person> persons = q.getResultList();
 		
 		System.out.println("" + persons.size() + " persons:");
 		for (Person p1 : persons)
 		System.out.println(p1);
-		
+
 		tx.commit();
 		em.close();
 
