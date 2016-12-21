@@ -2,17 +2,25 @@ package ch.bfh.btx.blue.adimed.web;
 
 import java.util.Date;
 import com.vaadin.annotations.Theme;
+import com.vaadin.data.Item;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.server.FontIcon;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.DateField;
 import com.vaadin.ui.Grid;
+import com.vaadin.ui.Grid.ColumnVisibilityChangeListener;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.renderers.ButtonRenderer;
+import com.vaadin.ui.renderers.ClickableRenderer.RendererClickEvent;
+import com.vaadin.ui.renderers.Renderer;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.CheckBox;
 
 /*
  * The Patient Schedule displays all the appointment of the day 
@@ -33,8 +41,11 @@ public class PatientenSchedule extends VerticalLayout implements View {
 	HorizontalLayout BottomLayout;
 	Button problems;
 	Label synchronisierung;
-	Button Sync;
+	Button sync;
+	Button detail;
 	VerticalLayout allBox;
+	CheckBox box;
+	Table scheduleTable;
 
 	public PatientenSchedule() {
 		// Title
@@ -59,7 +70,24 @@ public class PatientenSchedule extends VerticalLayout implements View {
 		TitleLayout.addComponent(logout);
 		TitleLayout.setMargin(true);
 		TitleLayout.setSpacing(true);
-
+		
+		
+		// Schedule
+//		scheduleLayout = new VerticalLayout();
+//		scheduleTable = new Table();
+//		scheduleTable.addContainerProperty("Versicherungsnummer", String.class, null);
+//		scheduleTable.addContainerProperty("Name", String.class, null);
+//		scheduleTable.addContainerProperty("Vorname", String.class, null);
+//		scheduleTable.addContainerProperty("Geschlecht", String.class, null);
+//		scheduleTable.addContainerProperty("Geburtsdatum", String.class, null);
+//		scheduleTable.addContainerProperty("Termin", String.class, null);
+//		scheduleTable.addContainerProperty("Erschienen", String.class, null);
+//		scheduleTable.addContainerProperty("Detail", String.class, null);
+//		
+//
+//		
+//		scheduleTable.addItem(new Object[]{"12345","Test","Test","M","12.12.12","12.12.12","ss","wewe"},2);
+		
 		// Schedule
 		scheduleLayout = new VerticalLayout();
 		scheduleGrid = new Grid();
@@ -70,20 +98,22 @@ public class PatientenSchedule extends VerticalLayout implements View {
 		scheduleGrid.addColumn("Geburtsdatum", String.class);
 		scheduleGrid.addColumn("Termin", String.class);
 		scheduleGrid.addColumn("erscheinen", String.class);
-		scheduleGrid.addColumn("Details", String.class);
-
-		scheduleGrid.addRow("834734667", "Panzoretti", "Marco", "23.08.1944", "m", "Freitag", "", "Details");
-		scheduleGrid.addRow("834787401", "Hugentobler", "Franziska", "12.2.1969", "w", "Freitag", "", "Details");
-
+		scheduleGrid.addColumn("Details", Button.class);
+		
+		detail = new Button ("detail");
+		
+		scheduleGrid.addRow("834734667", "Panzoretti", "Marco", "23.08.1944", "m", "Freitag", "", detail);
+		//scheduleGrid.addRow("834787401", "Hugentobler", "Franziska", "12.2.1969", "w", "Freitag", "", "Details");
+		
 		scheduleLayout.setMargin(true);
 		scheduleGrid.setSizeFull();
-		scheduleLayout.addComponent(scheduleGrid);
+		scheduleLayout.addComponents(scheduleGrid);
 
 		// Bottom
 		BottomLayout = new HorizontalLayout();
 		problems = new Button("Probleme");
 		synchronisierung = new Label("letzte Synchronisierung: ");
-		Sync = new Button("Synchronisieren");
+		sync = new Button("Synchronisieren");
 
 		BottomLayout.addComponent(problems);
 		BottomLayout.setComponentAlignment(problems, Alignment.BOTTOM_LEFT);
@@ -91,8 +121,8 @@ public class PatientenSchedule extends VerticalLayout implements View {
 		BottomLayout.addComponent(synchronisierung);
 		BottomLayout.setComponentAlignment(synchronisierung, Alignment.BOTTOM_CENTER);
 		synchronisierung.setSizeFull();
-		BottomLayout.addComponents(Sync);
-		BottomLayout.setComponentAlignment(Sync, Alignment.BOTTOM_RIGHT);
+		BottomLayout.addComponents(sync);
+		BottomLayout.setComponentAlignment(sync, Alignment.BOTTOM_RIGHT);
 		BottomLayout.setMargin(true);
 		BottomLayout.setSpacing(true);
 
@@ -110,11 +140,5 @@ public class PatientenSchedule extends VerticalLayout implements View {
 		// TODO Auto-generated method stub
 		
 	}
-
-	// @Override
-	// public void enter(ViewChangeEvent event) {
-	// // TODO Auto-generated method stub
-	//
-	// }
 
 }
