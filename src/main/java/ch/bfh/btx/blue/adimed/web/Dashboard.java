@@ -1,5 +1,8 @@
 package ch.bfh.btx.blue.adimed.web;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
@@ -62,15 +65,15 @@ public class Dashboard extends VerticalLayout implements View {
 	HorizontalLayout buttonLayout;
 
 	public Dashboard() {
+		
+		List dashboard = new ArrayList();
 
 		titleLayout = new HorizontalLayout();
 		titleLayout.setMargin(true);
 		titleLayout.setSpacing(true);
 		titleLabel = new Label("Patienten Dashboard");
 
-		backButton = new Button("", new Button.ClickListener() { // , new
-																	// Button.ClickListener()
-																	// {
+		backButton = new Button("", new Button.ClickListener() {
 
 			public void buttonClick(ClickEvent event) {
 				getUI().getNavigator().navigateTo(MainPage.PATIENTSCHEDULE);
@@ -147,7 +150,9 @@ public class Dashboard extends VerticalLayout implements View {
 		adminForm.addComponents(patIDField, nameField, firstNameField, birthDateField, genderField, phoneNbField,
 				streetField, postCodeField, allergyField, commentField, insuranceField);
 		adminPanel.setContent(adminForm);
-
+		
+		List diag = new ArrayList();
+		
 		diagnoseLaborLayout = new VerticalLayout();
 		diagnoseLaborLayout.setWidth("100%");
 		diagnoseLaborLayout.setSpacing(true);

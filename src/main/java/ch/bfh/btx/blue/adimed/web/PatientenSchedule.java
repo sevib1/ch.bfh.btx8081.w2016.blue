@@ -1,8 +1,12 @@
 package ch.bfh.btx.blue.adimed.web;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 import com.vaadin.annotations.Theme;
 import com.vaadin.data.Item;
+import com.vaadin.event.ContextClickEvent.ContextClickListener;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontIcon;
@@ -71,24 +75,10 @@ public class PatientenSchedule extends VerticalLayout implements View {
 		TitleLayout.setMargin(true);
 		TitleLayout.setSpacing(true);
 		
-		
+	
 		// Schedule
-//		scheduleLayout = new VerticalLayout();
-//		scheduleTable = new Table();
-//		scheduleTable.addContainerProperty("Versicherungsnummer", String.class, null);
-//		scheduleTable.addContainerProperty("Name", String.class, null);
-//		scheduleTable.addContainerProperty("Vorname", String.class, null);
-//		scheduleTable.addContainerProperty("Geschlecht", String.class, null);
-//		scheduleTable.addContainerProperty("Geburtsdatum", String.class, null);
-//		scheduleTable.addContainerProperty("Termin", String.class, null);
-//		scheduleTable.addContainerProperty("Erschienen", String.class, null);
-//		scheduleTable.addContainerProperty("Detail", String.class, null);
-//		
-//
-//		
-//		scheduleTable.addItem(new Object[]{"12345","Test","Test","M","12.12.12","12.12.12","ss","wewe"},2);
+		List schedule = new ArrayList();
 		
-		// Schedule
 		scheduleLayout = new VerticalLayout();
 		scheduleGrid = new Grid();
 		scheduleGrid.addColumn("Versicherungsnummer", String.class);
@@ -99,6 +89,7 @@ public class PatientenSchedule extends VerticalLayout implements View {
 		scheduleGrid.addColumn("Termin", String.class);
 		scheduleGrid.addColumn("erscheinen", String.class);
 		scheduleGrid.addColumn("Details", Button.class);
+		scheduleGrid.addColumn("edit", Button.class);
 		
 		detail = new Button ("detail");
 		
