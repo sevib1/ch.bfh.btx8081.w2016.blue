@@ -96,6 +96,7 @@ public class PatientenSchedule extends VerticalLayout implements View {
 		scheduleGrid.addColumn("Details", Button.class);
 		
 		
+				
 		detail = new Button ("detail");
 		
 		
