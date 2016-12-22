@@ -19,7 +19,7 @@ public class LaborModel extends Observable {
 		labResults.clear();
 		labResults.add(new LaborResult(1, new GregorianCalendar(), "GOT", true, new ArrayList<Case>()));
 		labResults.add(new LaborResult(2, new GregorianCalendar(), "GPT", true, new ArrayList<Case>()));
-
+		
 		labResults.add(new LaborResult(3, new GregorianCalendar(), "GGT", true, new ArrayList<Case>()));
 
 		labResults.add(new LaborResult(4, new GregorianCalendar(), "Panc", true, new ArrayList<Case>()));

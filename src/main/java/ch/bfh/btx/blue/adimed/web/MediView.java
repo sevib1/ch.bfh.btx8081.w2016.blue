@@ -2,7 +2,10 @@ package ch.bfh.btx.blue.adimed.web;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
+import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.ClassResource;
@@ -12,40 +15,54 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
 
-public class MediView extends VerticalLayout implements View {
-	HorizontalLayout gridTitelLayout;
+import ch.bfh.btx.blue.adimed.businessLayer.LaborResult;
+import ch.bfh.btx.blue.adimed.businessLayer.MediModel;
+import ch.bfh.btx.blue.adimed.businessLayer.Medication;
+import ch.bfh.btx.blue.adimed.businessLayer.Schedule;
+
+public class MediView extends VerticalLayout implements View,Observer{
+	HorizontalLayout titelLayout;
 	HorizontalLayout mediGridLayout;
 	Button backButton;
 	Label mediLabel;
-	Grid mediGrid;
-
+	Table mediTable;
+	private MediModel mediModel;
+	
 	public MediView() {
 
-		gridTitelLayout = new HorizontalLayout();
+		mediModel = new MediModel();
+		mediModel.addObserver(this);
+		
+		// set the title to the layout
+		titelLayout = new HorizontalLayout();
 		mediLabel = new Label("Medikationsübersicht");
-		gridTitelLayout.setMargin(true);
-		gridTitelLayout.setSpacing(true);
+		titelLayout.setMargin(true);
+		titelLayout.setSpacing(true);
+		
 
-		List medi = new ArrayList();
+		//ArrayList<Medication> mList = new ArrayList<Medication>();
 
+		// new grid for the medication
 		mediGridLayout = new HorizontalLayout();
 		mediGridLayout.setWidth("100%");
 
-		mediGrid = new Grid();
-		mediGrid.addColumn("Medikament", String.class);
-		mediGrid.addColumn("Pharmacode", String.class);
-		mediGrid.addColumn("Dosis", String.class);
-		mediGrid.addColumn("Compendium", String.class);
-		mediGrid.addColumn("Bereit", String.class);
-		mediGrid.addColumn("Applikationsform", String.class);
-		mediGrid.addColumn("Einahme", String.class);
-		mediGrid.addColumn("Datum", String.class);
-		mediGrid.addColumn("Bemerkung", String.class);
-		mediGrid.setSizeFull();
+		mediTable = new Table();
+//		mediTable.addColumn("Medikament", String.class);
+//		mediTable.addColumn("Pharmacode", String.class);
+//		mediTable.addColumn("Dosis", String.class);
+//		mediTable.addColumn("Compendium", String.class);
+//		mediTable.addColumn("Bereit", String.class);
+//		mediTable.addColumn("Applikationsform", String.class);
+//		mediTable.addColumn("Einahme", String.class);
+//		mediTable.addColumn("Datum", String.class);
+//		mediTable.addColumn("Bemerkung", String.class);
+//		mediTable.setSizeFull();
 
+		// button to go back to the patient schedule
 		backButton = new Button("", new Button.ClickListener() {
 
 			public void buttonClick(ClickEvent event) {
@@ -56,19 +73,32 @@ public class MediView extends VerticalLayout implements View {
 		backButton.setIcon(new ClassResource("/back.png"));
 		backButton.setHeight("170%");
 
-		gridTitelLayout.addComponents(mediLabel, backButton);
-		mediGridLayout.addComponent(mediGrid);
+		// add elements to the layout
+		titelLayout.addComponents(mediLabel, backButton);
+		mediGridLayout.addComponent(mediTable);
 
-		mediGrid.addRow("RITALIN LA 40mg", "2510998", "40-60mg tgl.", "Link", "", "Tablette", "oral", "27.10.16",
-				"3 mal täglich");
+//		mediGrid.addRow("RITALIN LA 40mg", "2510998", "40-60mg tgl.", "Link", "", "Tablette", "oral", "27.10.16",
+//				"3 mal täglich");
 
-		addComponents(gridTitelLayout, mediGridLayout);
+		// add elements to the main layout
+		addComponents(titelLayout, mediGridLayout);
+		mediModel.loadData();
 	}
 
 	@Override
 	public void enter(ViewChangeEvent event) {
 		// TODO Auto-generated method stub
 
+	}
+	@Override
+	public void update(Observable o, Object arg) {
+		BeanItemContainer<Medication> container = new BeanItemContainer<Medication>(Medication.class);  
+		container.addAll(mediModel.getMedication()); // Verknüpfung zwischen Daten in LaborModel und LaborView
+		
+		mediTable.setContainerDataSource(container);
+		mediTable.refreshRowCache();
+		//mediTable.setVisibleColumns("typeOfExamination", "results");//"laborDate", 
+		//mediTable.setColumnHeaders( "Untersuchung", "Resultat");//"Datum",
 	}
 
 }

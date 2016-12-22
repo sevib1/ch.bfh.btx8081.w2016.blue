@@ -1,6 +1,5 @@
 package ch.bfh.btx.blue.adimed.web;
 
-
 import javax.servlet.annotation.WebServlet;
 
 import com.vaadin.annotations.Theme;
@@ -33,25 +32,23 @@ public class MainPage extends UI {
 
 	@Override
 	protected void init(VaadinRequest request) {
-		//final VerticalLayout layout = new VerticalLayout();
+		// final VerticalLayout layout = new VerticalLayout();
 
-		final VerticalLayout layout = new Dashboard();
+		final VerticalLayout layout = new PatientenSchedule();
 
-		
-
+		// set the main layout
 		layout.setMargin(true);
 		layout.setSpacing(true);
-
 		setContent(layout);
 		ComponentContainerViewDisplay viewDisplay = new ComponentContainerViewDisplay(layout);
+
+		// create the Navigator for all Views
 		navigator = new Navigator(UI.getCurrent(), viewDisplay);
-		navigator.addView("", new Dashboard());
+		navigator.addView("", new PatientenSchedule());
 		navigator.addView(PATIENTSCHEDULE, new PatientenSchedule());
 		navigator.addView(DASHBOARD, new Dashboard());
 		navigator.addView(LABORVIEW, new LaborView());
 		navigator.addView(MEDIVIEW, new MediView());
-//		navigator.addView("", new Patienten_Schedule());
-//		navigator.addView(DASHBOARD, new Dashboard());
 
 	}
 
