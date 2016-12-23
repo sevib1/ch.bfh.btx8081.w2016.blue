@@ -33,8 +33,7 @@ public class Patient{
 //	private Case cas;
 	
 //@OneToOne
-//@JoinColumn(name="pID")
-//private Person person;
+
 
 	public Patient() {
 	
@@ -52,11 +51,11 @@ public class Patient{
 //	}
 
 	
-public String toString(){
-	return name;
-}
-	public String getPatient() {
-		return "ersetzen";
+//public String toString(){
+//	return name;
+//}-
+	public int getPatient() {
+		return PID;
 	}
 
 }

@@ -1,5 +1,6 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
+import java.sql.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -7,30 +8,33 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
+@IdClass(PatAgId.class)
 public class Agenda {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int CID;
-	private GregorianCalendar agendaDate;
+	private int PID;
+	@Id
+	private Date agendaDate;
 	private boolean appeared;
-	
-	@OneToMany
-	private List<Case> cases; // Association
 
+//	@OneToMany
+//	private List<Case> cases; // Association
+
+	
 	public Agenda() {
 	}
-
-	public Agenda(GregorianCalendar agendaDate, int CID, boolean apeared, List<Case> cases) {
-		this.agendaDate = agendaDate;
-		this.CID = CID;
-		this.appeared = appeared;
-		this.cases = cases;
-	}
-
+/**
+ * @return - 
+ */
+public String toString(){
+	return PID +" "+agendaDate+" "+appeared;
+}
+ 
 	public void getAppointement() {
 	}
 

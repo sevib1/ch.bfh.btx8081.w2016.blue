@@ -11,6 +11,7 @@ import javax.persistence.Query;
 
 import ch.bfh.btx.blue.adimed.businessLayer.Patient;
 import ch.bfh.btx.blue.adimed.businessLayer.Person;
+import ch.bfh.btx.blue.adimed.businessLayer.Agenda;
 
 public class JPAConnection {
 	EntityManagerFactory emf;
@@ -28,7 +29,7 @@ public class JPAConnection {
 		tx.begin();
 	//	DBPerson();
 		DBPatient();
-
+		//DBAgenda();
 		tx.commit();
 		em.close();
 
@@ -42,18 +43,44 @@ public class JPAConnection {
 //		for (Person p1 : persons)
 //			System.out.println(p1);
 //	}
-
+/**
+ * 
+ */
 	public void DBPatient() {
 		
 		Query q = em.createQuery("select q from Patient q");
 		
-		//List<Person> persons = x.getResultList();
+
 
 		List<Patient> patients = q.getResultList();
 
 		System.out.println( " persons:" + patients.size() );
-		for (Patient p1 : patients)
+	for (Patient p1 : patients)
+			
+	
+		System.out.println(p1.getPatient());
+	}
+
+	public void DBAgenda(String hello){
+		
+		Query q = em.createQuery("select q from Agenda q");
+		
+		//List<Person> persons = x.getResultList();
+
+		List<Agenda> agenda = q.getResultList();
+
+		System.out.println( " agenda:" + agenda.size() );
+		for (Agenda p1 : agenda){
 			System.out.println(p1);
+		//System.out.println(p1.getPatient());
+		
+		
+		
+		}
+	}
+	
+	public void Test(){
+		Query q = em.createQuery("select q from Agenda q");
 	}
 
 }
