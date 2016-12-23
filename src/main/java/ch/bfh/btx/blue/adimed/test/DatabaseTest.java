@@ -18,20 +18,6 @@ public class DatabaseTest {
 		
 		JPAConnection hello = new JPAConnection();
 		hello.connection();
-		// TODO Auto-generated method stub
-	//	EntityManagerFactory emf = Persistence.createEntityManagerFactory("medi");
 
-		//EntityManager em = emf.createEntityManager();
-
-		//EntityTransaction tx = em.getTransaction();
-		//tx.begin();
-		
-	//	Agenda agenda1 = new Agenda();
-	//	
-		//em.persist(agenda1);
-//
-//		tx.commit();
-		//em.close();
-	//	
 	}
 }

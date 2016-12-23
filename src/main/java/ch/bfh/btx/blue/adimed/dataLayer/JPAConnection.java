@@ -26,7 +26,7 @@ public class JPAConnection {
 	public void connection() {
 
 		tx.begin();
-		DBPerson();
+	//	DBPerson();
 		DBPatient();
 
 		tx.commit();
@@ -34,20 +34,24 @@ public class JPAConnection {
 
 	}
 
-	public void DBPerson() {
-		Query q = em.createQuery("select p from Person p");
-		List<Person> persons = q.getResultList();
-
-		System.out.println("" + persons.size() + " persons:");
-		for (Person p1 : persons)
-			System.out.println(p1);
-	}
+//	public void DBPerson() {
+//		Query q = em.createQuery("select p from Person p");
+//		List<Person> persons = q.getResultList();
+//
+//		System.out.println( " persons:"+ persons.size() );
+//		for (Person p1 : persons)
+//			System.out.println(p1);
+//	}
 
 	public void DBPatient() {
-		Query q = em.createQuery("select p from Patient p");
+		
+		Query q = em.createQuery("select q from Patient q");
+		
+		//List<Person> persons = x.getResultList();
+
 		List<Patient> patients = q.getResultList();
 
-		System.out.println("" + patients.size() + " persons:");
+		System.out.println( " persons:" + patients.size() );
 		for (Patient p1 : patients)
 			System.out.println(p1);
 	}

@@ -5,12 +5,15 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 
 @Entity
+
 public class Staff extends Person {
 	
-	private int pId;
+	private int PID;
 
 	private String eMail;
 	
@@ -29,11 +32,11 @@ public class Staff extends Person {
 
 	}
 
-	public Staff(String firstName, String name, String phoneNb, String eMail, int pId) {
-		super(firstName,name, phoneNb);
-		this.eMail = eMail;
-		this.pId = pId;
-	}
+//	public Staff(String firstName, String name, String phoneNb, String eMail, int pId) {
+//		super(firstName,name, phoneNb);
+//		this.eMail = eMail;
+//		this.pId = pId;
+//	}
 	public String getServiceProviders() {
 		return "ersetzen";
 	}
