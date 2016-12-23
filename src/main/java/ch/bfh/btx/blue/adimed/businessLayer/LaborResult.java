@@ -13,9 +13,9 @@ import javax.persistence.OneToOne;
 @Entity
 public class LaborResult {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int LabId;
-		
+
 	public int getLabId() {
 		return LabId;
 	}
@@ -35,22 +35,23 @@ public class LaborResult {
 	private GregorianCalendar laborDate;
 	private String typeOfExamination;
 	private boolean results;
-	
+
 	@OneToMany
 	private List<Case> cases;
-	
+
 	public LaborResult() {
-		
+
 	}
-	
-public LaborResult(int Id, GregorianCalendar laborDate, String typeOfExamination, boolean results, List<Case> cases) {
+
+	public LaborResult(int Id, GregorianCalendar laborDate, String typeOfExamination, boolean results,
+			List<Case> cases) {
 		this.LabId = Id;
 		this.setLaborDate(laborDate);
 		this.setTypeOfExamination(typeOfExamination);
 		this.setResults(results);
 		this.cases = cases;
 	}
-	
+
 	public String getLabor() {
 		return "ersetzen";
 	}

@@ -6,15 +6,14 @@ import java.util.Observable;
 
 public class MediModel extends Observable {
 	
-	
 	private ArrayList<Medication> medication;
 	public ArrayList<Medication> getMedication() {
 		return medication;
 	}
 	
-	public MediModel(){
-		medication = new ArrayList<Medication>();
-	}
+//	public MediModel(){
+//		medication = new ArrayList<Medication>();
+//	}
 	public void loadData(){
 		medication.clear();
 		//medication.add(new Medication());
