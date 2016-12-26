@@ -1,13 +1,15 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Observable;
+
+import ch.bfh.btx.blue.adimed.dataLayer.JPAConnection;
 
 public class LaborModel extends Observable {
 
 	private ArrayList<LaborResult> labResults;
+	private JPAConnection conn;
 
 	public ArrayList<LaborResult> getLabResults() {
 		return labResults;
@@ -15,23 +17,11 @@ public class LaborModel extends Observable {
 
 	public LaborModel() {
 		labResults = new ArrayList<LaborResult>();
+		conn = new JPAConnection();
 	}
 
 	public void loadData() {
-		labResults.clear();
-		labResults.add(new LaborResult(1, new GregorianCalendar(), "GOT", true, new ArrayList<Case>()));
-
-		labResults.add(new LaborResult(2, new GregorianCalendar(), "GPT", true, new ArrayList<Case>()));
-
-		labResults.add(new LaborResult(3, new GregorianCalendar(), "GGT", true, new ArrayList<Case>()));
-
-		labResults.add(new LaborResult(4, new GregorianCalendar(), "Panc", true, new ArrayList<Case>()));
-
-		labResults.add(new LaborResult(5, new GregorianCalendar(), "Quick", true, new ArrayList<Case>()));
-
-		labResults.add(new LaborResult(7, new GregorianCalendar(), "INR", true, new ArrayList<Case>()));
-
-		labResults.add(new LaborResult(8, new GregorianCalendar(), "Crea", true, new ArrayList<Case>()));
+		labResults = new ArrayList<LaborResult>(conn.labResults());
 
 		setChanged();
 		notifyObservers();

@@ -5,13 +5,12 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Id;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import ch.bfh.btx.blue.adimed.businessLayer.Patient;
-import ch.bfh.btx.blue.adimed.businessLayer.Person;
 import ch.bfh.btx.blue.adimed.businessLayer.Agenda;
+import ch.bfh.btx.blue.adimed.businessLayer.LaborResult;
+import ch.bfh.btx.blue.adimed.businessLayer.Patient;
 
 public class JPAConnection {
 	EntityManagerFactory emf;
@@ -79,6 +78,15 @@ public class JPAConnection {
 		}
 	}
 	
+	public List<LaborResult> labResults(){
+		tx = em.getTransaction();
+		tx.begin();
+		Query q = em.createQuery("select l from LaborResult l");
+		
+		List<LaborResult> laborResults = q.getResultList();
+		tx.commit();
+		return laborResults;
+	}
 	public void Test(){
 		Query q = em.createQuery("select q from Agenda q");
 	}

@@ -1,7 +1,12 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
-public class Compendium {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class Compendium {
+	@Id
+	private int ID;
 	private String compendium;
 
 	public Compendium() {

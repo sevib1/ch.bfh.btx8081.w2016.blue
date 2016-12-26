@@ -31,7 +31,6 @@ public class LaborView extends VerticalLayout implements View, Observer {
 	private LaborModel labModel;
 	public LaborView() {
 		labModel = new LaborModel();
-		List labo = new ArrayList();
 		labModel.addObserver(this);
 		
 		

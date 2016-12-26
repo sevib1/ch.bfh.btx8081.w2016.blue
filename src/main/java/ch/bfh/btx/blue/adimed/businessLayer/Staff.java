@@ -3,6 +3,7 @@ package ch.bfh.btx.blue.adimed.businessLayer;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
@@ -10,10 +11,9 @@ import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 
 @Entity
-
+@DiscriminatorValue("Staff")
 public class Staff extends Person {
 	
-	private int PID;
 
 	private String eMail;
 	

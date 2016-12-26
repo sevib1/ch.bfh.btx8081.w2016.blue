@@ -7,7 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Entity;
-@Entity public class Case {
+@Entity 
+public class Case {
 @Id
 	private int CID;
 	private GregorianCalendar diagnoseDate;

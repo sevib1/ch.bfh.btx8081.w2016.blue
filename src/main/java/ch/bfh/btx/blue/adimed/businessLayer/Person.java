@@ -9,18 +9,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.MappedSuperclass;
-
-import org.eclipse.persistence.internal.libraries.asm.Type;
 @Entity 
 @Inheritance( strategy = InheritanceType.JOINED )
-@DiscriminatorColumn(name = "PID", discriminatorType = DiscriminatorType.INTEGER)
+@DiscriminatorColumn(name = "personType", discriminatorType = DiscriminatorType.INTEGER)
 
 public class Person {
 	
 	@Id
 	private int PID;
-	
+	private String personType;
 	private String firstName;
 	private String name;
 	private String street;
@@ -63,5 +60,13 @@ public class Person {
 	public String toString(){
 		return firstName + " "+ name+" "+street;
 		
+	}
+
+	public String getPersonType() {
+		return personType;
+	}
+
+	public void setPersonType(String personType) {
+		this.personType = personType;
 	}
 }

@@ -1,7 +1,5 @@
 package ch.bfh.btx.blue.adimed.web;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -9,20 +7,15 @@ import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.ClassResource;
-import com.vaadin.server.FontAwesome;
-import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Button;
-import com.vaadin.ui.Grid;
+import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Button.ClickEvent;
 
-import ch.bfh.btx.blue.adimed.businessLayer.LaborResult;
 import ch.bfh.btx.blue.adimed.businessLayer.MediModel;
 import ch.bfh.btx.blue.adimed.businessLayer.Medication;
-import ch.bfh.btx.blue.adimed.businessLayer.Schedule;
 
 public class MediView extends VerticalLayout implements View,Observer{
 	HorizontalLayout titelLayout;

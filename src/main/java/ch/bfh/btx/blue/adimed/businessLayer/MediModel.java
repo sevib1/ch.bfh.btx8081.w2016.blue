@@ -11,9 +11,9 @@ public class MediModel extends Observable {
 		return medication;
 	}
 	
-//	public MediModel(){
-//		medication = new ArrayList<Medication>();
-//	}
+	public MediModel(){
+		medication = new ArrayList<Medication>();
+	}
 	public void loadData(){
 		medication.clear();
 		//medication.add(new Medication());

@@ -39,15 +39,15 @@ public class Medication {
 	@OneToMany
 	private List<Case> cases;
 	
-	@ManyToOne
-	private Staff staff; // Association
+	//@ManyToOne
+	//private Staff staff; // Association
 
 	
 	public Medication() {
 	}
 
 	public Medication(GregorianCalendar dateOfgivenMedical, String mediName, String mediDosis, boolean mediState,
-			Compendium compendium, String applicationForm, String takingForm, String comment, List<Case> cases, Staff staff) {
+			Compendium compendium, String applicationForm, String takingForm, String comment, List<Case> cases/*, Staff staff*/) {
 		this.applyDate = applyDate;
 		this.medName = medName;
 		this.medDosis = medDosis;
@@ -57,7 +57,7 @@ public class Medication {
 		//this.takingForm = takingForm;
 		this.comment = comment;
 		this.cases = cases;
-		this.staff = staff;
+		//this.staff = staff;
 
 	}
 
