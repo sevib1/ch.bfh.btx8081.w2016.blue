@@ -1,5 +1,7 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -19,7 +21,8 @@ public class Medication {
 
 	private int CID;
 	
-	private GregorianCalendar applyDate;
+	private Date applyDate;
+	
 
 	private String medName;
 
@@ -30,6 +33,7 @@ public class Medication {
 	private String applyForm;
 
 	private String comment;
+	
 
 	public int getCID() {
 		return CID;
@@ -38,12 +42,15 @@ public class Medication {
 	public void setCID(int cID) {
 		CID = cID;
 	}
-
-	public GregorianCalendar getApplyDate() {
+	
+	
+	public Date getApplyDate() {
+		
+		
 		return applyDate;
 	}
 
-	public void setApplyDate(GregorianCalendar dateOfgivenMedical) {
+	public void setApplyDate(Date dateOfgivenMedical) {
 		this.applyDate = dateOfgivenMedical;
 	}
 
@@ -115,7 +122,7 @@ public class Medication {
 	public Medication() {
 	}
 
-	public Medication(int Id,GregorianCalendar dateOfgivenMedical, String mediName, String mediDosis, boolean mediState,
+	public Medication(int Id,Date dateOfgivenMedical, String mediName, String mediDosis, boolean mediState,
 			Compendium compendium, String applicationForm, String takingForm, String comment,
 			List<Case> cases/* , Staff staff */) {
 		this.CID = Id;
