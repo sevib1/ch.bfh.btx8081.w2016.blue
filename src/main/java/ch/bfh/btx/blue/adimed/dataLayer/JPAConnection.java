@@ -10,6 +10,7 @@ import javax.persistence.Query;
 
 import ch.bfh.btx.blue.adimed.businessLayer.Agenda;
 import ch.bfh.btx.blue.adimed.businessLayer.LaborResult;
+import ch.bfh.btx.blue.adimed.businessLayer.Medication;
 import ch.bfh.btx.blue.adimed.businessLayer.Patient;
 
 public class JPAConnection {
@@ -91,4 +92,17 @@ public class JPAConnection {
 		Query q = em.createQuery("select q from Agenda q");
 	}
 
+
+public List<Medication> medication(){
+	tx = em.getTransaction();
+	tx.begin();
+	Query q = em.createQuery("select l from Medication l");
+	
+	List<Medication> medication = q.getResultList();
+	tx.commit();
+	return medication;
+}
+public void Test1(){
+	Query q = em.createQuery("select q from Agenda q");
+}
 }
