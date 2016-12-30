@@ -105,4 +105,16 @@ public List<Medication> medication(){
 public void Test1(){
 	Query q = em.createQuery("select q from Agenda q");
 }
+public List<Patient> patient(){
+	tx = em.getTransaction();
+	tx.begin();
+	Query q = em.createQuery("select l from Patient l");
+	
+	List<Patient> patient = q.getResultList();
+	tx.commit();
+	return patient;
+}
+public void Test2(){
+	Query q = em.createQuery("select q from Agenda q");
+}
 }

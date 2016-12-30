@@ -3,22 +3,24 @@ package ch.bfh.btx.blue.adimed.businessLayer;
 import java.util.ArrayList;
 import java.util.Observable;
 
+import ch.bfh.btx.blue.adimed.dataLayer.JPAConnection;
 import javafx.scene.control.CheckBox;
 
 public class ScheduleModel extends Observable {
-	private ArrayList<Schedule> schedule;
-	public ArrayList<Schedule> getSchedule() {
-		return schedule;
+	
+	private ArrayList<Patient> patient;
+	private JPAConnection conn;
+	
+	public ArrayList<Patient> getPatient() {
+		return patient;
 	}
 
-	// public ScheduleModel(){
-	// schedule = new ArrayList<Schedule>();
-	// }
+	 public ScheduleModel(){
+	  patient = new ArrayList<Patient>();
+	  conn = new JPAConnection();
+	 }
 	public void loadData() {
-		schedule.clear();
-		// schedule.add(new
-		// Schedule(1,"123","123","123","123","123","123","123",new
-		// ArrayList<Patient>()));
+		patient = new ArrayList<Patient>(conn.patient());
 
 		setChanged();
 		notifyObservers();

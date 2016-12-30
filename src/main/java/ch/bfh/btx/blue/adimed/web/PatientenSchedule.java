@@ -1,32 +1,24 @@
 package ch.bfh.btx.blue.adimed.web;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-
+import java.util.Observable;
+import java.util.Observer;
 import com.vaadin.annotations.Theme;
-import com.vaadin.data.Item;
-import com.vaadin.event.ContextClickEvent.ContextClickListener;
+import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
-import com.vaadin.server.FontIcon;
-import com.vaadin.server.VaadinRequest;
-import com.vaadin.ui.Alignment;
+import com.vaadin.server.ClassResource;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.DateField;
-import com.vaadin.ui.Grid;
-import com.vaadin.ui.Grid.ColumnVisibilityChangeListener;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.renderers.ButtonRenderer;
-import com.vaadin.ui.renderers.ClickableRenderer.RendererClickEvent;
 
+import ch.bfh.btx.blue.adimed.businessLayer.Medication;
 import ch.bfh.btx.blue.adimed.businessLayer.Patient;
 import ch.bfh.btx.blue.adimed.businessLayer.Schedule;
-
-import com.vaadin.ui.renderers.Renderer;
+import ch.bfh.btx.blue.adimed.businessLayer.ScheduleModel;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.CheckBox;
 
@@ -37,25 +29,29 @@ import com.vaadin.ui.CheckBox;
  * 
  * 
  */
+@SuppressWarnings("serial")
 @Theme("mytheme")
-public class PatientenSchedule extends VerticalLayout implements View {
+public class PatientenSchedule extends VerticalLayout implements View, Observer {
 
 	HorizontalLayout TitleLayout;
 	Label title;
 	DateField date;
 	Button logout;
 	VerticalLayout scheduleLayout;
-	Grid scheduleGrid;
 	HorizontalLayout BottomLayout;
 	Button problems;
 	Label synchronisierung;
 	Button sync;
-	Button detail;
+	Button detailButton;
 	VerticalLayout allBox;
-	CheckBox box;
+	CheckBox checkAppear;
 	Table scheduleTable;
-	
+	private ScheduleModel scheduleModel;
+
 	public PatientenSchedule() {
+		scheduleModel = new ScheduleModel();
+		scheduleModel.addObserver(this);
+
 		// Title
 		TitleLayout = new HorizontalLayout();
 		title = new Label("Patienten Schedule");
@@ -64,14 +60,8 @@ public class PatientenSchedule extends VerticalLayout implements View {
 		date.setValue(new Date());
 		date.setDateFormat("dd.MM.yyyy");
 
-		logout = new Button("Logout", new Button.ClickListener() {
-			
-			public void buttonClick(ClickEvent event) {
-				 getUI().getNavigator().navigateTo(MainPage.DASHBOARD);
-				
-			}
-		});
-		
+		logout = new Button("Logout");
+
 		TitleLayout.addComponent(title);
 		TitleLayout.addComponent(date);
 
@@ -79,66 +69,87 @@ public class PatientenSchedule extends VerticalLayout implements View {
 		TitleLayout.setMargin(true);
 		TitleLayout.setSpacing(true);
 		
-	
-		// Schedule
-		 ArrayList<Schedule> sList = new ArrayList<Schedule>();
-			
-	
+		//layout for the patient schedule
 		scheduleLayout = new VerticalLayout();
-		scheduleGrid = new Grid();
-		scheduleGrid.addColumn("Versicherungsnummer", String.class);
-		scheduleGrid.addColumn("Name", String.class);
-		scheduleGrid.addColumn("Vorname", String.class);
-		scheduleGrid.addColumn("Geschlecht", String.class);
-		scheduleGrid.addColumn("Geburtsdatum", String.class);
-		scheduleGrid.addColumn("Termin", String.class);
-		scheduleGrid.addColumn("erscheinen", String.class);
-		scheduleGrid.addColumn("Details", Button.class);
+		scheduleTable = new Table();
+//		scheduleTable.addContainerProperty("Versicherungsnummer", String.class, null);
+//		scheduleTable.addContainerProperty("Name", String.class, null);
+//		scheduleTable.addContainerProperty("Vorname", String.class, null);
+//		scheduleTable.addContainerProperty("Geburtsdatum", String.class, null);
+//		scheduleTable.addContainerProperty("Geschlecht", String.class, null);
+//		scheduleTable.addContainerProperty("Termin", String.class, null);
+//		scheduleTable.addContainerProperty("Erscheinen", CheckBox.class, null);
+//		scheduleTable.addContainerProperty("Details", Button.class, null);
 		
+		//button to go to the Dashboard
+		detailButton = new Button("", new Button.ClickListener() {
+
+			public void buttonClick(ClickEvent event) {
+				getUI().getNavigator().navigateTo(MainPage.DASHBOARD);
+
+			}
+		});
+
+		detailButton.setIcon(new ClassResource("/medical-records.png"));
 		
-				
-		detail = new Button ("detail");
+		checkAppear = new CheckBox();
+
+		scheduleTable.addItem(new Object[] { "834734667", "Panzoretti", "Marco", "23.08.1944", "m", "Freitag, 14:00",
+				checkAppear, detailButton }, 1);
+		// scheduleTable.addItem(new
+		// Object[]{"834787401","Hugentobler","Franziska","12.2.1969","w","Freitag,
+		// 15:00",checkAppear,detailButton},2);
 		
-		
-		
-		sList.add(new Schedule());
-		scheduleGrid.addRow("834734667", "Panzoretti", "Marco", "23.08.1944", "m", "Freitag", "", detail);
-		//scheduleGrid.addRow("834787401", "Hugentobler", "Franziska", "12.2.1969", "w", "Freitag", "", "Details");
-		
-		scheduleLayout.setMargin(true);
-		scheduleGrid.setSizeFull();
-		scheduleLayout.addComponents(scheduleGrid);
+		//add Componetns to the layout
+		scheduleTable.setPageLength(10);
+		scheduleTable.setSizeFull();
+		scheduleLayout.addComponents(scheduleTable);
 
 		// Bottom
-		BottomLayout = new HorizontalLayout();
-		problems = new Button("Probleme");
-		synchronisierung = new Label("letzte Synchronisierung: ");
-		sync = new Button("Synchronisieren");
+		// BottomLayout = new HorizontalLayout();
+		// problems = new Button("Probleme");
+		// synchronisierung = new Label("letzte Synchronisierung: ");
+		// sync = new Button("Synchronisieren");
+		//
+		// BottomLayout.addComponent(problems);
+		// BottomLayout.setComponentAlignment(problems, Alignment.BOTTOM_LEFT);
+		// problems.setSizeFull();
+		// BottomLayout.addComponent(synchronisierung);
+		// BottomLayout.setComponentAlignment(synchronisierung,
+		// Alignment.BOTTOM_CENTER);
+		// synchronisierung.setSizeFull();
+		// BottomLayout.addComponents(sync);
+		// BottomLayout.setComponentAlignment(sync, Alignment.BOTTOM_RIGHT);
+		// BottomLayout.setMargin(true);
+		// BottomLayout.setSpacing(true);
 
-		BottomLayout.addComponent(problems);
-		BottomLayout.setComponentAlignment(problems, Alignment.BOTTOM_LEFT);
-		problems.setSizeFull();
-		BottomLayout.addComponent(synchronisierung);
-		BottomLayout.setComponentAlignment(synchronisierung, Alignment.BOTTOM_CENTER);
-		synchronisierung.setSizeFull();
-		BottomLayout.addComponents(sync);
-		BottomLayout.setComponentAlignment(sync, Alignment.BOTTOM_RIGHT);
-		BottomLayout.setMargin(true);
-		BottomLayout.setSpacing(true);
-
-		// Alle Layout zusammen
+		// all layouts
 		allBox = new VerticalLayout();
 		allBox.addComponent(TitleLayout);
 		allBox.addComponent(scheduleLayout);
-		allBox.addComponent(BottomLayout);
+		// allBox.addComponent(BottomLayout);
 		addComponent(allBox);
+		scheduleModel.loadData();
 
 	}
 
 	@Override
 	public void enter(ViewChangeEvent event) {
 		// TODO Auto-generated method stub
-		
+
+	}
+	
+	@Override
+	public void update(Observable o, Object arg) {
+		BeanItemContainer<Patient> container = new BeanItemContainer<Patient>(Patient.class);
+		container.addAll(scheduleModel.getPatient()); // Verknüpfung zwischen
+														// Daten in MediModel
+														// und MediView
+
+		scheduleTable.setContainerDataSource(container);
+		scheduleTable.refreshRowCache();
+		scheduleTable.setVisibleColumns("firstName","name","city","birthDate","phoneNb","sex","zip","street","insurance","insuranceNb","allergy");//"laborDate",
+		scheduleTable.setColumnHeaders( "Vorname","Name","Stadt","Geburtstag","Tel.Nr","Geschlecht","PLZ","Strasse","Versicherung","Versicherungs Nb","Allergie");//"Datum",
 	}
 
 }
