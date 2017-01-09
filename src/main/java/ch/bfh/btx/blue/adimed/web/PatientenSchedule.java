@@ -61,6 +61,8 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 		date.setDateFormat("dd.MM.yyyy");
 
 		logout = new Button("Logout");
+			
+	
 
 		TitleLayout.addComponent(title);
 		TitleLayout.addComponent(date);
@@ -82,8 +84,8 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 //		scheduleTable.addContainerProperty("Details", Button.class, null);
 		
 		//button to go to the Dashboard
-		detailButton = new Button("", new Button.ClickListener() {
-
+	detailButton = new Button("", new Button.ClickListener() {
+		
 			public void buttonClick(ClickEvent event) {
 				getUI().getNavigator().navigateTo(MainPage.DASHBOARD);
 
@@ -94,8 +96,8 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 		
 		checkAppear = new CheckBox();
 
-		scheduleTable.addItem(new Object[] { "834734667", "Panzoretti", "Marco", "23.08.1944", "m", "Freitag, 14:00",
-				checkAppear, detailButton }, 1);
+//		scheduleTable.addItem(new Object[] { "834734667", "Panzoretti", "Marco", "23.08.1944", "m", "Freitag, 14:00",
+//				checkAppear, detailButton }, 1);
 		// scheduleTable.addItem(new
 		// Object[]{"834787401","Hugentobler","Franziska","12.2.1969","w","Freitag,
 		// 15:00",checkAppear,detailButton},2);
@@ -106,19 +108,20 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 		scheduleLayout.addComponents(scheduleTable);
 
 		// Bottom
-		// BottomLayout = new HorizontalLayout();
+		 BottomLayout = new HorizontalLayout();
+		 
 		// problems = new Button("Probleme");
 		// synchronisierung = new Label("letzte Synchronisierung: ");
 		// sync = new Button("Synchronisieren");
 		//
-		// BottomLayout.addComponent(problems);
+		 BottomLayout.addComponent(detailButton);
 		// BottomLayout.setComponentAlignment(problems, Alignment.BOTTOM_LEFT);
 		// problems.setSizeFull();
 		// BottomLayout.addComponent(synchronisierung);
 		// BottomLayout.setComponentAlignment(synchronisierung,
 		// Alignment.BOTTOM_CENTER);
 		// synchronisierung.setSizeFull();
-		// BottomLayout.addComponents(sync);
+		 //BottomLayout.addComponents(synch);
 		// BottomLayout.setComponentAlignment(sync, Alignment.BOTTOM_RIGHT);
 		// BottomLayout.setMargin(true);
 		// BottomLayout.setSpacing(true);
@@ -127,7 +130,7 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 		allBox = new VerticalLayout();
 		allBox.addComponent(TitleLayout);
 		allBox.addComponent(scheduleLayout);
-		// allBox.addComponent(BottomLayout);
+		allBox.addComponent(BottomLayout);
 		addComponent(allBox);
 		scheduleModel.loadData();
 
