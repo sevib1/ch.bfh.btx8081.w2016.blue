@@ -27,7 +27,7 @@ public class JPAConnection {
 	public void connection() {
 
 		tx.begin();
-
+		
 		DBPatient();
 
 		tx.commit();
@@ -36,7 +36,7 @@ public class JPAConnection {
 	}
 
 	public void DBPatient() {
-
+		
 		Query q = em.createQuery("select q from Patient q");
 
 		List<Patient> patients = q.getResultList();

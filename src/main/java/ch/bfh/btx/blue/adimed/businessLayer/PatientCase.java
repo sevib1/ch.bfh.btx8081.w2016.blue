@@ -12,26 +12,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-@Entity 
-@Table(name="case")
-public class Case {
-@Id
-@GeneratedValue(strategy = GenerationType.AUTO)
-	
+@Entity
+public class PatientCase {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int patientCaseId;
 
-	
-	
-	@OneToMany
-	@JoinColumn(name="labR")
+	@OneToMany(mappedBy = "patientCase")
 	private List<LaborResult> laborResult; // Association
-	@OneToMany
-	@JoinColumn(name="med")
+	@OneToMany(mappedBy = "patientCase")
 	private List<Medication> medication; // Association
-	@OneToMany
-	@JoinColumn(name="diag")
+	@OneToMany(mappedBy = "patientCase")
 	private List<Diagnosis> diagnosis; // Association
 
-	public Case() {
+	public PatientCase() {
 	}
 
 	public void getCase() {

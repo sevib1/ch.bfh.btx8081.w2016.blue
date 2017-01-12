@@ -42,8 +42,8 @@ public class Patient{
 	
 
 @OneToOne
-@JoinColumn(name="case")
-	private Case cas;
+@JoinColumn(name="patientcase")
+	private PatientCase cas;
 	
 @OneToMany
 @JoinColumn(name="appointment")

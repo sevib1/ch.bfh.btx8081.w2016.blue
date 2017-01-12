@@ -21,7 +21,9 @@ public class Medication {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-
+	private int medicationId;
+	
+	private PatientCase patientCase;
 	private Date applyDate;
 
 	private String medName;

@@ -5,7 +5,7 @@
 
 	<persistence-unit name="medi" transaction-type="RESOURCE_LOCAL">
 		<class>ch.bfh.btx.blue.adimed.businessLayer.Appointment</class>
-		<class>ch.bfh.btx.blue.adimed.businessLayer.Case</class>
+		<class>ch.bfh.btx.blue.adimed.businessLayer.PatientCase</class>
 		<class>ch.bfh.btx.blue.adimed.businessLayer.Diagnosis</class>
 		<class>ch.bfh.btx.blue.adimed.businessLayer.LaborResult</class>
 		<class>ch.bfh.btx.blue.adimed.businessLayer.Medication</class>

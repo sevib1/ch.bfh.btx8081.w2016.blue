@@ -17,7 +17,9 @@ public class Diagnosis {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-
+	private int diagnosisId;
+	
+	private PatientCase patientCase;
 	private GregorianCalendar diagnosisDate;
 	private String status;
 	private String diagnosis;
