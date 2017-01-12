@@ -4,17 +4,13 @@
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
 	<persistence-unit name="medi" transaction-type="RESOURCE_LOCAL">
-	<class>ch.bfh.btx.blue.adimed.businessLayer.Agenda</class>
-	<class>ch.bfh.btx.blue.adimed.businessLayer.Case</class>
-	<class>ch.bfh.btx.blue.adimed.businessLayer.Compendium</class>
-	<class>ch.bfh.btx.blue.adimed.businessLayer.Diagnosis</class>
-	<class>ch.bfh.btx.blue.adimed.businessLayer.LaborResult</class> 
-	<class>ch.bfh.btx.blue.adimed.businessLayer.Medication</class>
-	<class>ch.bfh.btx.blue.adimed.businessLayer.Patient</class>
-	<!-- <class>ch.bfh.btx.blue.adimed.businessLayer.Person</class> 
-	<class>ch.bfh.btx.blue.adimed.businessLayer.Staff</class> -->
-	
-	<!--<class>ch.bfh.btx.blue.adimed.businessLayer.Doctor</class>-->
+		<class>ch.bfh.btx.blue.adimed.businessLayer.Appointment</class>
+		<class>ch.bfh.btx.blue.adimed.businessLayer.Case</class>
+		<class>ch.bfh.btx.blue.adimed.businessLayer.Diagnosis</class>
+		<class>ch.bfh.btx.blue.adimed.businessLayer.LaborResult</class>
+		<class>ch.bfh.btx.blue.adimed.businessLayer.Medication</class>
+		<class>ch.bfh.btx.blue.adimed.businessLayer.Patient</class>
+
 
 		<properties>
 
@@ -24,10 +20,9 @@
 				value="jdbc:jtds:sqlserver://corpus.bfh.ch:55783;DatabaseName=SWE_2016_2" />
 			<property name="javax.persistence.jdbc.user" value="SWE_2016_2_owner" />
 			<property name="javax.persistence.jdbc.password" value="SWE_2016_2_owner$w" />
+			<property name="eclipselink.ddl-generation" value="create-tables" />
 			<property name="eclipselink.ddl-generation.output-mode"
-				value="sql-script" />
-				<property name="eclipselink.logging.level" value="FINE"/>
-			 			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+				value="both" />
 		</properties>
 	</persistence-unit>
 </persistence>

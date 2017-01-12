@@ -20,7 +20,7 @@ public class MediModel extends Observable {
 		conn = new JPAConnection();
 	}
 	public void loadData(){
-		medication = new ArrayList<Medication>(conn.medication());
+		//medication = new ArrayList<Medication>(conn.medication());
 		
 
 		

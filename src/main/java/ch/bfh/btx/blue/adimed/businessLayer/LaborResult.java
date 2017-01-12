@@ -14,40 +14,13 @@ import javax.persistence.OneToOne;
 public class LaborResult {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int LabId;
-
-	public int getLabId() {
-		return LabId;
-	}
-
-	public void setLabId(int labId) {
-		LabId = labId;
-	}
-
-	public List<Case> getCases() {
-		return cases;
-	}
-
-	public void setCases(List<Case> cases) {
-		this.cases = cases;
-	}
 
 	private GregorianCalendar laborDate;
 	private String typeOfExamination;
 	private boolean results;
 
-
 	public LaborResult() {
 
-	}
-
-	public LaborResult(int Id, GregorianCalendar laborDate, String typeOfExamination, boolean results,
-			List<Case> cases) {
-		this.LabId = Id;
-		this.setLaborDate(laborDate);
-		this.setTypeOfExamination(typeOfExamination);
-		this.setResults(results);
-		this.cases = cases;
 	}
 
 	public String getLabor() {
@@ -58,24 +31,12 @@ public class LaborResult {
 		return laborDate;
 	}
 
-	public void setLaborDate(GregorianCalendar laborDate) {
-		this.laborDate = laborDate;
-	}
-
 	public String getTypeOfExamination() {
 		return typeOfExamination;
 	}
 
-	public void setTypeOfExamination(String typeOfExamination) {
-		this.typeOfExamination = typeOfExamination;
-	}
-
 	public boolean isResults() {
 		return results;
-	}
-
-	public void setResults(boolean results) {
-		this.results = results;
 	}
 
 }

@@ -1,7 +1,6 @@
 package ch.bfh.btx.blue.adimed.web;
 
 import javax.servlet.annotation.WebServlet;
-
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.navigator.Navigator;
@@ -20,6 +19,7 @@ import com.vaadin.ui.VerticalLayout;
  * intended to be overridden to add component to the user interface and
  * initialize non-component functionality.
  */
+@SuppressWarnings("serial")
 @Theme("mytheme")
 public class MainPage extends UI {
 	public Navigator navigator;
@@ -32,7 +32,6 @@ public class MainPage extends UI {
 
 	@Override
 	protected void init(VaadinRequest request) {
-		// final VerticalLayout layout = new VerticalLayout();
 
 		final VerticalLayout layout = new PatientenSchedule();
 

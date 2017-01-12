@@ -10,9 +10,9 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 
-@Entity
+
 @DiscriminatorValue("Staff")
-public class Staff extends Person {
+public class Staff {
 	
 
 	private String eMail;

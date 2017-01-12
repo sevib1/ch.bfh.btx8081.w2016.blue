@@ -21,7 +21,7 @@ public class LaborModel extends Observable {
 	}
 
 	public void loadData() {
-		labResults = new ArrayList<LaborResult>(conn.labResults());
+		//labResults = new ArrayList<LaborResult>(conn.labResults());
 
 		setChanged();
 		notifyObservers();

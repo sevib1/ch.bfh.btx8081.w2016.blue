@@ -20,7 +20,7 @@ public class ScheduleModel extends Observable {
 	  conn = new JPAConnection();
 	 }
 	public void loadData() {
-		patient = new ArrayList<Patient>(conn.patient());
+	//	patient = new ArrayList<Patient>(conn.patient());
 
 		setChanged();
 		notifyObservers();

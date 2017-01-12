@@ -1,31 +1,17 @@
 package ch.bfh.btx.blue.adimed.web;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Observable;
-import java.util.Observer;
-
-import com.vaadin.data.util.BeanItemContainer;
-import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.ClassResource;
-import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
-
 import ch.bfh.btx.blue.adimed.businessLayer.DashboardModel;
-import ch.bfh.btx.blue.adimed.businessLayer.Diagnosis;
-import ch.bfh.btx.blue.adimed.businessLayer.Patient;
-import ch.bfh.btx.blue.adimed.businessLayer.Schedule;
-
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.TextField;
-import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 //import ch.bfh.btx.blue.adimed.web.MainPage;
@@ -38,6 +24,7 @@ import com.vaadin.ui.VerticalLayout;
  * 
  */
 
+@SuppressWarnings("serial")
 public class Dashboard extends VerticalLayout implements View {
 
 	HorizontalLayout titleLayout;
@@ -77,9 +64,8 @@ public class Dashboard extends VerticalLayout implements View {
 	public Dashboard() {
 
 		dashModel = new DashboardModel();
-		//dashModel.addObserver(this);
+//		dashModel.addObserver(this);
 
-		// ArrayList<Dashboard> sList = new ArrayList<Dashboard>();
 
 		titleLayout = new HorizontalLayout();
 		titleLayout.setMargin(true);
@@ -176,8 +162,8 @@ public class Dashboard extends VerticalLayout implements View {
 		diagnoseGrid.addColumn("Diagnose", String.class);
 		diagnoseGrid.addColumn("Datum", String.class);
 
-		diagnoseGrid.addRow("Status nach:", "Alkoholabhängigkeit", "1.1.17");
-		diagnoseGrid.addRow("Verdacht auf:", "Leberzyrrhose", "1.1.16");
+//		diagnoseGrid.addRow("Status nach:", "Alkoholabhängigkeit", "1.1.17");
+//		diagnoseGrid.addRow("Verdacht auf:", "Leberzyrrhose", "1.1.16");
 
 		// Button to change view to medication
 		buttonLayout = new HorizontalLayout();
@@ -227,7 +213,7 @@ public class Dashboard extends VerticalLayout implements View {
 
 	}
 
-	
+//	
 //	public void update(Observable o, Object arg) {
 //	BeanItemContainer<Patient> container new BeanItemContainer<Patient>(Patient.class); 
 //	container.addAll(dashModel.getPatient());

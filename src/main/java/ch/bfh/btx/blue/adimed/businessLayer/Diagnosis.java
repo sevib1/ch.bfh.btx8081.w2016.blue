@@ -9,32 +9,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="diagnosis")
 public class Diagnosis {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	
+	@GeneratedValue(strategy = GenerationType.AUTO)
+
 	private GregorianCalendar diagnosisDate;
 	private String status;
 	private String diagnosis;
-	
-	@OneToMany
-	private List<Case> cases;
-	
+
 	public Diagnosis() {
-		
+
 	}
-	
-	public Diagnosis(GregorianCalendar diagnosisDate, String status, String diagnosis, List<Case> cases) {
-		this.diagnosisDate = diagnosisDate;
-		this.status = status;
-		this.diagnosis = diagnosis;
-		this.cases = cases;
+
+	public GregorianCalendar getDiagnosisDate() {
+		return diagnosisDate;
 	}
-	
-	
+
+	public String getStatus() {
+		return status;
+	}
+
 	public String getDiagnosis() {
 		return "ersetzen";
 	}

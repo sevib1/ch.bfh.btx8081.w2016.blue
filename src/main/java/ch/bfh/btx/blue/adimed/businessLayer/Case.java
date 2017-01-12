@@ -4,14 +4,20 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 @Entity 
+@Table(name="case")
 public class Case {
 @Id
-	private int CID;
+@GeneratedValue(strategy = GenerationType.AUTO)
+	
 
 	
 	
