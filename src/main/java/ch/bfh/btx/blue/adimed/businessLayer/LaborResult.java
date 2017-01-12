@@ -36,8 +36,6 @@ public class LaborResult {
 	private String typeOfExamination;
 	private boolean results;
 
-	@OneToMany
-	private List<Case> cases;
 
 	public LaborResult() {
 

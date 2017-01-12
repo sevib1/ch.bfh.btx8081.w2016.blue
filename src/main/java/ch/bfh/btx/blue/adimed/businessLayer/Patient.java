@@ -17,7 +17,6 @@ public class Patient{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	
 	private int PID;
 	
 	private String firstName;
@@ -35,41 +34,14 @@ public class Patient{
 	
 	
 
-//	@OneToOne
-//	private Case cas;
-	
-//@OneToOne
-
+@OneToOne(CascadeType.PERSIST)
+	private Case cas;
 
 	public Patient() {
 	
 	}
 	
-	public Patient(int pid, int Id, String firstName, String name, String street, int zip, String city,
-			Date birthDate, String phoneNb, char sex, String insurance, String insuranceNb,
-			String allergy) {
-		//super(personID, firstName, name, street, postalCode, city, birthDate, phoneNb, gender);
-		this.PID = pid;
-		this.CID = Id;
-		this.firstName = firstName;
-		this.name = name;
-		this.street = street;
-		this.zip = zip;
-		this.city = city;
-		this.birthDate = birthDate;
-		this.phoneNb =phoneNb;
-		this.sex = sex;
-		this.insurance = insurance;
-		this.insuranceNb = insuranceNb;
-		this.allergy = allergy;
 		
-
-	}
-
-	
-//public String toString(){
-//	return name;
-//}-
 	public int getPatient() {
 		return PID;
 	}
