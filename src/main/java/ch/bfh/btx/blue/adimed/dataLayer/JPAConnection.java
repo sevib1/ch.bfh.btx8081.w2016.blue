@@ -76,8 +76,8 @@ public class JPAConnection {
 	// }
 	//
 	 public List<Patient> patient() {
-	// tx = em.getTransaction();
-	// tx.begin();
+	 //tx = em.getTransaction();
+	 tx.begin();
 	 Query q = em.createQuery("select p from Patient p");
 	//
 	 List<Patient> patient = q.getResultList();

@@ -74,17 +74,9 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 		//layout for the patient schedule
 		scheduleLayout = new VerticalLayout();
 		scheduleTable = new Table();
-//		scheduleTable.addContainerProperty("Versicherungsnummer", String.class, null);
-//		scheduleTable.addContainerProperty("Name", String.class, null);
-//		scheduleTable.addContainerProperty("Vorname", String.class, null);
-//		scheduleTable.addContainerProperty("Geburtsdatum", String.class, null);
-//		scheduleTable.addContainerProperty("Geschlecht", String.class, null);
-//		scheduleTable.addContainerProperty("Termin", String.class, null);
-//		scheduleTable.addContainerProperty("Erscheinen", CheckBox.class, null);
-//		scheduleTable.addContainerProperty("Details", Button.class, null);
-		
+
 		//button to go to the Dashboard
-	detailButton = new Button("", new Button.ClickListener() {
+		detailButton = new Button("", new Button.ClickListener() {
 		
 			public void buttonClick(ClickEvent event) {
 				getUI().getNavigator().navigateTo(MainPage.DASHBOARD);
@@ -96,11 +88,7 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 		
 		checkAppear = new CheckBox();
 
-//		scheduleTable.addItem(new Object[] { "834734667", "Panzoretti", "Marco", "23.08.1944", "m", "Freitag, 14:00",
-//				checkAppear, detailButton }, 1);
-		// scheduleTable.addItem(new
-		// Object[]{"834787401","Hugentobler","Franziska","12.2.1969","w","Freitag,
-		// 15:00",checkAppear,detailButton},2);
+
 		
 		//add Componetns to the layout
 		scheduleTable.setPageLength(10);
