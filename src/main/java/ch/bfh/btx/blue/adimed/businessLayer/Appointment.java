@@ -26,9 +26,4 @@ public class Appointment {
 		return agendaDate;
 	}
 
-	public void setAgendaDate(Date agendaDate) {
-		this.agendaDate = agendaDate;
-	}
-
-
 }
