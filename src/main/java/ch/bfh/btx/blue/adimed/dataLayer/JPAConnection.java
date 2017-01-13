@@ -8,9 +8,6 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import ch.bfh.btx.blue.adimed.businessLayer.Appointment;
-import ch.bfh.btx.blue.adimed.businessLayer.LaborResult;
-import ch.bfh.btx.blue.adimed.businessLayer.Medication;
 import ch.bfh.btx.blue.adimed.businessLayer.Patient;
 
 public class JPAConnection {
@@ -44,7 +41,7 @@ public class JPAConnection {
 		System.out.println(" persons:" + patients.size());
 		for (Patient p1 : patients)
 
-			System.out.println(p1.getPatient());
+			System.out.println(p1.getCas().getPatientCaseId());
 	}
 
 	// public List<LaborResult> labResults() {

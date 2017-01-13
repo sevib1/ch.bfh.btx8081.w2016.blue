@@ -32,7 +32,6 @@ public class Patient {
 	private String allergy;
 
 	@OneToOne
-	
 	private PatientCase cas;
 
 	@OneToMany(mappedBy = "patient")
@@ -40,10 +39,6 @@ public class Patient {
 
 	public Patient() {
 
-	}
-
-	public int getPatient() {
-		return PID;
 	}
 
 	public int getPID() {
@@ -93,5 +88,14 @@ public class Patient {
 	public String getAllergy() {
 		return allergy;
 	}
+
+	public PatientCase getCas() {
+		return cas;
+	}
+
+	public List<Appointment> getAppointment() {
+		return appointment;
+	}
+
 
 }

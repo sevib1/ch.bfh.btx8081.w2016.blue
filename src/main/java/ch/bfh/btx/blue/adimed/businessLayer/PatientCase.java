@@ -1,13 +1,9 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,7 +24,21 @@ public class PatientCase {
 	public PatientCase() {
 	}
 
-	public void getCase() {
+	public int getPatientCaseId() {
+		return patientCaseId;
 	}
+
+	public List<LaborResult> getLaborResult() {
+		return laborResult;
+	}
+
+	public List<Medication> getMedication() {
+		return medication;
+	}
+
+	public List<Diagnosis> getDiagnosis() {
+		return diagnosis;
+	}
+
 
 }

@@ -1,15 +1,10 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
 import java.util.GregorianCalendar;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 @Entity
 public class Diagnosis {
@@ -37,6 +32,18 @@ public class Diagnosis {
 
 	public String getDiagnosis() {
 		return "ersetzen";
+	}
+
+	public PatientCase getPatientCase() {
+		return patientCase;
+	}
+
+	public void setPatientCase(PatientCase patientCase) {
+		this.patientCase = patientCase;
+	}
+
+	public void setDiagnosis(String diagnosis) {
+		this.diagnosis = diagnosis;
 	}
 
 }
