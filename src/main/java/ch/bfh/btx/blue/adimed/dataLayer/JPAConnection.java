@@ -75,15 +75,15 @@ public class JPAConnection {
 	// Query q = em.createQuery("select q from Agenda q");
 	// }
 	//
-	// public List<Patient> patient() {
+	 public List<Patient> patient() {
 	// tx = em.getTransaction();
 	// tx.begin();
-	// Query q = em.createQuery("select l from Patient l");
+	 Query q = em.createQuery("select p from Patient p");
 	//
-	// List<Patient> patient = q.getResultList();
-	// tx.commit();
-	// return patient;
-	// }
+	 List<Patient> patient = q.getResultList();
+	 tx.commit();
+	 return patient;
+	 }
 	//
 	// public void Test2() {
 	// Query q = em.createQuery("select q from Agenda q");
