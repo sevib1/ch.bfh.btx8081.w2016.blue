@@ -4,18 +4,14 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import org.eclipse.persistence.internal.jpa.metadata.structures.ArrayAccessor;
 
 @Entity
 @Table(name="patient")
@@ -45,8 +41,7 @@ public class Patient{
 @JoinColumn(name="patientcase")
 	private PatientCase cas;
 	
-@OneToMany
-@JoinColumn(name="appointment")
+@OneToMany(mappedBy = "patient")
 private List<Appointment>appointment = new ArrayList<Appointment>();
 
 	public Patient() {
