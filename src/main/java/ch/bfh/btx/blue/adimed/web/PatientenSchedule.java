@@ -44,7 +44,7 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 	Button sync;
 	Button detailButton;
 	VerticalLayout allBox;
-	CheckBox checkAppear;
+
 	Table scheduleTable;
 	private ScheduleModel scheduleModel;
 
@@ -61,8 +61,6 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 		date.setDateFormat("dd.MM.yyyy");
 
 		logout = new Button("Logout");
-			
-	
 
 		TitleLayout.addComponent(title);
 		TitleLayout.addComponent(date);
@@ -70,49 +68,35 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 		TitleLayout.addComponent(logout);
 		TitleLayout.setMargin(true);
 		TitleLayout.setSpacing(true);
-		
-		//layout for the patient schedule
+
+		// layout for the patient schedule
 		scheduleLayout = new VerticalLayout();
 		scheduleTable = new Table();
 
-		//button to go to the Dashboard
+		// button to go to the Dashboard
 		detailButton = new Button("", new Button.ClickListener() {
-		
+
 			public void buttonClick(ClickEvent event) {
+				scheduleTable.getValue();
+				System.out.println(scheduleTable.getValue());
 				getUI().getNavigator().navigateTo(MainPage.DASHBOARD);
 
 			}
 		});
 
+		scheduleTable.setSelectable(true);
+
 		detailButton.setIcon(new ClassResource("/medical-records.png"));
-		
-		checkAppear = new CheckBox();
 
-
-		
-		//add Componetns to the layout
+		// add Componetns to the layout
 		scheduleTable.setPageLength(10);
 		scheduleTable.setSizeFull();
 		scheduleLayout.addComponents(scheduleTable);
 
 		// Bottom
-		 BottomLayout = new HorizontalLayout();
-		 
-		// problems = new Button("Probleme");
-		// synchronisierung = new Label("letzte Synchronisierung: ");
-		// sync = new Button("Synchronisieren");
-		//
-		 BottomLayout.addComponent(detailButton);
-		// BottomLayout.setComponentAlignment(problems, Alignment.BOTTOM_LEFT);
-		// problems.setSizeFull();
-		// BottomLayout.addComponent(synchronisierung);
-		// BottomLayout.setComponentAlignment(synchronisierung,
-		// Alignment.BOTTOM_CENTER);
-		// synchronisierung.setSizeFull();
-		 //BottomLayout.addComponents(synch);
-		// BottomLayout.setComponentAlignment(sync, Alignment.BOTTOM_RIGHT);
-		// BottomLayout.setMargin(true);
-		// BottomLayout.setSpacing(true);
+		BottomLayout = new HorizontalLayout();
+
+		BottomLayout.addComponent(detailButton);
 
 		// all layouts
 		allBox = new VerticalLayout();
@@ -129,7 +113,7 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 		// TODO Auto-generated method stub
 
 	}
-	
+
 	@Override
 	public void update(Observable o, Object arg) {
 		BeanItemContainer<Patient> container = new BeanItemContainer<Patient>(Patient.class);
@@ -139,8 +123,10 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 
 		scheduleTable.setContainerDataSource(container);
 		scheduleTable.refreshRowCache();
-		scheduleTable.setVisibleColumns("firstName","name","city","birthDate","phoneNb","sex","zip","street","insurance","insuranceNb","allergy");//"laborDate",
-		scheduleTable.setColumnHeaders( "Vorname","Name","Stadt","Geburtstag","Tel.Nr","Geschlecht","PLZ","Strasse","Versicherung","Versicherungs Nb","Allergie");//"Datum",
+		scheduleTable.setVisibleColumns("firstName", "name", "city", "birthDate", "phoneNb", "sex", "zip", "street",
+				"insurance", "insuranceNb", "allergy");// "laborDate",
+		scheduleTable.setColumnHeaders("Vorname", "Name", "Stadt", "Geburtstag", "Tel.Nr", "Geschlecht", "PLZ",
+				"Strasse", "Versicherung", "Versicherungs Nb", "Allergie");// "Datum",
 	}
 
 }
