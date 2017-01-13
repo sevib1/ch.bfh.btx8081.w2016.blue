@@ -14,14 +14,13 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="patient")
-public class Patient{
-	
+@Table(name = "patient")
+public class Patient {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int PID;
-	
+
 	private String firstName;
 	private String name;
 	private String street;
@@ -30,25 +29,22 @@ public class Patient{
 	private Date birthDate;
 	private String phoneNb;
 	private char sex;
-	
+
 	private String insurance;
 	private String insuranceNb;
 	private String allergy;
-	
-	
 
-@OneToOne
-@JoinColumn(name="patientcase")
-	private PatientCase cas;
+	@OneToOne
 	
-@OneToMany(mappedBy = "patient")
-private List<Appointment>appointment = new ArrayList<Appointment>();
+	private PatientCase cas;
+
+	@OneToMany(mappedBy = "patient")
+	private List<Appointment> appointment = new ArrayList<Appointment>();
 
 	public Patient() {
-	
+
 	}
-	
-		
+
 	public int getPatient() {
 		return PID;
 	}
@@ -57,75 +53,48 @@ private List<Appointment>appointment = new ArrayList<Appointment>();
 		return PID;
 	}
 
-	
-
 	public String getFirstName() {
 		return firstName;
 	}
-
-	
 
 	public String getName() {
 		return name;
 	}
 
-	
-
 	public String getStreet() {
 		return street;
 	}
 
-	
 	public int getZip() {
 		return zip;
 	}
-
-	
 
 	public String getCity() {
 		return city;
 	}
 
-	
-
 	public Date getBirthDate() {
 		return birthDate;
 	}
-
-	
 
 	public String getPhoneNb() {
 		return phoneNb;
 	}
 
-	
-
 	public char getSex() {
 		return sex;
 	}
-
-	
-
-	
-
-	
 
 	public String getInsurance() {
 		return insurance;
 	}
 
-	
-
 	public String getInsuranceNb() {
 		return insuranceNb;
 	}
 
-	
-
 	public String getAllergy() {
 		return allergy;
 	}
-
-	
 
 }
