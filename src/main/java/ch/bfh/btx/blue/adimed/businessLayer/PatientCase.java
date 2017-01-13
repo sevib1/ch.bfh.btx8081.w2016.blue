@@ -22,6 +22,7 @@ public class PatientCase {
 	private List<Diagnosis> diagnosis; // Association
 
 	public PatientCase() {
+		
 	}
 
 	public int getPatientCaseId() {

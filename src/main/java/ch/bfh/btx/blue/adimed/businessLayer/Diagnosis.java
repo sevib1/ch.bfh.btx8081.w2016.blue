@@ -1,6 +1,6 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
-import java.util.GregorianCalendar;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,9 +12,9 @@ public class Diagnosis {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int diagnosisId;
-	
+
 	private PatientCase patientCase;
-	private GregorianCalendar diagnosisDate;
+	private Date diagnosisDate;
 	private String status;
 	private String diagnosis;
 
@@ -22,7 +22,7 @@ public class Diagnosis {
 
 	}
 
-	public GregorianCalendar getDiagnosisDate() {
+	public Date getDiagnosisDate() {
 		return diagnosisDate;
 	}
 
@@ -31,19 +31,11 @@ public class Diagnosis {
 	}
 
 	public String getDiagnosis() {
-		return "ersetzen";
+		return diagnosis;
 	}
 
 	public PatientCase getPatientCase() {
 		return patientCase;
-	}
-
-	public void setPatientCase(PatientCase patientCase) {
-		this.patientCase = patientCase;
-	}
-
-	public void setDiagnosis(String diagnosis) {
-		this.diagnosis = diagnosis;
 	}
 
 }

@@ -14,10 +14,12 @@ public class Appointment {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int appointementId;
 	private Date agendaDate;
+	
 	@ManyToOne
 	private Patient patient;
 	
 	public Appointment() {
+		
 	}
 
 	public Date getAgendaDate() {

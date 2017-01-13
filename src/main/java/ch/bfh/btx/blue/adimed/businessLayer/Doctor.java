@@ -1,12 +1,8 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-//@DiscriminatorValue("Doctor")
 public class Doctor/* extends Staff */ {
 
-	private int id;
+	private int doctorId;
 	private String title;
 	private String specialization;
 
@@ -14,16 +10,28 @@ public class Doctor/* extends Staff */ {
 
 	}
 
-	public String getDoctor() {
-		return "ersetzen";
+	public int getDoctorId() {
+		return doctorId;
+	}
+
+	public void setDoctorId(int doctorId) {
+		this.doctorId = doctorId;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getSpecialization() {
 		return specialization;
 	}
 
-	public String getTitle() {
-		return title;
+	public void setSpecialization(String specialization) {
+		this.specialization = specialization;
 	}
 
 }

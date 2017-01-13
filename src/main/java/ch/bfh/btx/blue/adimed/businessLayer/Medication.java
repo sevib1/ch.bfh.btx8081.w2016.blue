@@ -4,13 +4,7 @@ import java.util.Date;
 
 //import java.sql.Date;
 
-import java.util.List;
-
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,25 +15,28 @@ public class Medication {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int medicationId;
-	
+
 	private PatientCase patientCase;
 	private Date applyDate;
-
 	private String medName;
-
 	private String medDosis;
-
 	private String medStatus;
-
 	private String applyForm;
-
 	private String comment;
 
 	public Medication() {
+		
+	}
+
+	public int getMedicationId() {
+		return medicationId;
+	}
+
+	public PatientCase getPatientCase() {
+		return patientCase;
 	}
 
 	public Date getApplyDate() {
-
 		return applyDate;
 	}
 
