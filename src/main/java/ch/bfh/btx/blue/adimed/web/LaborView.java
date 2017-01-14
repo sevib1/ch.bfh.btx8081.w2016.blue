@@ -27,8 +27,8 @@ public class LaborView extends VerticalLayout implements View, Observer {
 	Button backButton;
 	private LaborModel labModel;
 
-	public LaborView() {
-		labModel = new LaborModel();
+	public LaborView(LaborModel lm) {
+		labModel = lm;
 		labModel.addObserver(this);
 		
 		//layout for the results
@@ -70,14 +70,11 @@ public class LaborView extends VerticalLayout implements View, Observer {
 
 		//add components to the root layout
 		addComponents(laborLayout, labGridLayout);
-		labModel.loadData();
-
 	}
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		// TODO Auto-generated method stub
-
+		labModel.loadData();
 	}
 
 	@Override

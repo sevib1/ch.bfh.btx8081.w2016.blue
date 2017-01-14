@@ -1,9 +1,11 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,12 +17,15 @@ public class PatientCase {
 	private int patientCaseId;
 
 	@OneToMany(mappedBy = "patientCase")
-	private List<LaborResult> laborResult; // Association
+	private ArrayList<LaborResult> laborResult; // Association
 	@OneToMany(mappedBy = "patientCase")
-	private List<Medication> medication; // Association
+	private ArrayList<Medication> medication; // Association
 	@OneToMany(mappedBy = "patientCase")
-	private List<Diagnosis> diagnosis; // Association
+	private ArrayList<Diagnosis> diagnosis; // Association
 
+	@OneToOne(mappedBy="patientCase")
+	private Patient patient;
+	
 	public PatientCase() {
 		
 	}
@@ -29,16 +34,20 @@ public class PatientCase {
 		return patientCaseId;
 	}
 
-	public List<LaborResult> getLaborResult() {
+	public ArrayList<LaborResult> getLaborResult() {
 		return laborResult;
 	}
 
-	public List<Medication> getMedication() {
+	public ArrayList<Medication> getMedication() {
 		return medication;
 	}
 
-	public List<Diagnosis> getDiagnosis() {
+	public ArrayList<Diagnosis> getDiagnosis() {
 		return diagnosis;
+	}
+
+	public Patient getPatient() {
+		return patient;
 	}
 
 

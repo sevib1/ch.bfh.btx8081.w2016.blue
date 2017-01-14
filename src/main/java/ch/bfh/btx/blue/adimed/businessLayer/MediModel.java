@@ -8,25 +8,26 @@ import ch.bfh.btx.blue.adimed.dataLayer.JPAConnection;
 
 public class MediModel extends Observable {
 	
-	private ArrayList<Medication> medication;
+	private PatientCase patientCase;
 	private JPAConnection conn;
 	
 	public ArrayList<Medication> getMedication() {
-		return medication;
+		return patientCase.getMedication();
 	}
 	
 	public MediModel(){
-		medication = new ArrayList<Medication>();
 		conn = new JPAConnection();
 	}
 	public void loadData(){
-		//medication = new ArrayList<Medication>(conn.medication());
-		
-
-		
+		patientCase = conn.getPatientCaseById(patientCase.getPatientCaseId());
 		
 		setChanged();
 		notifyObservers();
+	}
+
+	public void setPatientCase(PatientCase patientCase) {
+		this.patientCase = patientCase;
+		
 	}
 
 	

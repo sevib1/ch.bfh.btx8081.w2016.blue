@@ -9,6 +9,7 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import ch.bfh.btx.blue.adimed.businessLayer.Patient;
+import ch.bfh.btx.blue.adimed.businessLayer.PatientCase;
 
 public class JPAConnection {
 	EntityManagerFactory emf;
@@ -24,7 +25,7 @@ public class JPAConnection {
 	public void connection() {
 
 		tx.begin();
-		
+
 		DBPatient();
 
 		tx.commit();
@@ -33,7 +34,7 @@ public class JPAConnection {
 	}
 
 	public void DBPatient() {
-		
+
 		Query q = em.createQuery("select q from Patient q");
 
 		List<Patient> patients = q.getResultList();
@@ -41,7 +42,7 @@ public class JPAConnection {
 		System.out.println(" persons:" + patients.size());
 		for (Patient p1 : patients)
 
-			System.out.println(p1.getCas().getPatientCaseId());
+			System.out.println(p1.getPatientCase().getPatientCaseId());
 	}
 
 	// public List<LaborResult> labResults() {
@@ -72,17 +73,31 @@ public class JPAConnection {
 	// Query q = em.createQuery("select q from Agenda q");
 	// }
 	//
-	 public List<Patient> patient() {
-	 //tx = em.getTransaction();
-	 tx.begin();
-	 Query q = em.createQuery("select p from Patient p");
-	//
-	 List<Patient> patient = q.getResultList();
-	 tx.commit();
-	 return patient;
-	 }
+	public List<Patient> patient() {
+		// tx = em.getTransaction();
+		tx.begin();
+		Query q = em.createQuery("select p from Patient p");
+		//
+		List<Patient> patient = q.getResultList();
+		tx.commit();
+		return patient;
+	}
 	//
 	// public void Test2() {
 	// Query q = em.createQuery("select q from Agenda q");
 	// }
+
+	public Patient getPatientById(int pid) {
+		tx.begin();
+		Patient p = em.find(Patient.class, pid);
+		tx.commit();
+		return p;
+	}
+
+	public PatientCase getPatientCaseById(int patientCaseId) {
+		tx.begin();
+		PatientCase p = em.find(PatientCase.class, patientCaseId);
+		tx.commit();
+		return p;
+	}
 }

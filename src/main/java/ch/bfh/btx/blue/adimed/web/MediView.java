@@ -1,5 +1,6 @@
 package ch.bfh.btx.blue.adimed.web;
 
+import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -25,9 +26,9 @@ public class MediView extends VerticalLayout implements View,Observer{
 	Table mediTable;
 	private MediModel mediModel;
 	
-	public MediView() {
+	public MediView(MediModel mm) {
 
-		mediModel = new MediModel();
+		mediModel = mm;
 		mediModel.addObserver(this);
 		
 		// set the title to the layout
@@ -36,24 +37,11 @@ public class MediView extends VerticalLayout implements View,Observer{
 		titelLayout.setMargin(true);
 		titelLayout.setSpacing(true);
 		
-
-		//ArrayList<Medication> mList = new ArrayList<Medication>();
-
 		// new grid for the medication
 		mediGridLayout = new HorizontalLayout();
 		mediGridLayout.setWidth("100%");
 
 		mediTable = new Table();
-//		mediTable.addColumn("Medikament", String.class);
-//		mediTable.addColumn("Pharmacode", String.class);
-//		mediTable.addColumn("Dosis", String.class);
-//		mediTable.addColumn("Compendium", String.class);
-//		mediTable.addColumn("Bereit", String.class);
-//		mediTable.addColumn("Applikationsform", String.class);
-//		mediTable.addColumn("Einahme", String.class);
-//		mediTable.addColumn("Datum", String.class);
-//		mediTable.addColumn("Bemerkung", String.class);
-//		mediTable.setSizeFull();
 
 		// button to go back to the patient schedule
 		backButton = new Button("", new Button.ClickListener() {
@@ -69,19 +57,13 @@ public class MediView extends VerticalLayout implements View,Observer{
 		// add elements to the layout
 		titelLayout.addComponents(mediLabel, backButton);
 		mediGridLayout.addComponent(mediTable);
-
-//		mediGrid.addRow("RITALIN LA 40mg", "2510998", "40-60mg tgl.", "Link", "", "Tablette", "oral", "27.10.16",
-//				"3 mal täglich");
-
 		// add elements to the main layout
 		addComponents(titelLayout, mediGridLayout);
-		mediModel.loadData();
 	}
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		// TODO Auto-generated method stub
-
+		mediModel.loadData();
 	}
 	@Override
 	public void update(Observable o, Object arg) {
@@ -90,8 +72,8 @@ public class MediView extends VerticalLayout implements View,Observer{
 		
 		mediTable.setContainerDataSource(container);
 		mediTable.refreshRowCache();
-		//mediTable.setVisibleColumns("typeOfExamination", "results");//"laborDate", 
-		//mediTable.setColumnHeaders( "Untersuchung", "Resultat");//"Datum",
+		mediTable.setVisibleColumns("medName", "medDosis","applyDate","medStatus","applyForm","comment");//"laborDate", 
+		mediTable.setColumnHeaders( "Name", "Dosis","Datum", "Status","Verabreichungsweg","Kommentar");//"Datum",
 	}
 
 }

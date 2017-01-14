@@ -5,6 +5,7 @@ import java.util.Date;
 //import java.sql.Date;
 
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +16,7 @@ public class Medication {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int medicationId;
-
+	@ManyToOne
 	private PatientCase patientCase;
 	private Date applyDate;
 	private String medName;

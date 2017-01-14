@@ -32,7 +32,8 @@ public class Patient {
 	private String allergy;
 
 	@OneToOne
-	private PatientCase cas;
+	private PatientCase patientCase;
+	
 
 	@OneToMany(mappedBy = "patient")
 	private List<Appointment> appointment = new ArrayList<Appointment>();
@@ -89,12 +90,16 @@ public class Patient {
 		return allergy;
 	}
 
-	public PatientCase getCas() {
-		return cas;
+	public PatientCase getPatientCase() {
+		return patientCase;
 	}
 
 	public List<Appointment> getAppointment() {
 		return appointment;
+	}
+
+	public Patient getPatient() {
+		return this;
 	}
 
 

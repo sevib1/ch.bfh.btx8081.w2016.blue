@@ -1,18 +1,28 @@
 package ch.bfh.btx.blue.adimed.web;
 
+import java.util.Observable;
+import java.util.Observer;
+
+import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.ClassResource;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
-import ch.bfh.btx.blue.adimed.businessLayer.DashboardModel;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
+import com.vaadin.ui.Table;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
+
+import ch.bfh.btx.blue.adimed.businessLayer.DashboardModel;
+import ch.bfh.btx.blue.adimed.businessLayer.Diagnosis;
+import ch.bfh.btx.blue.adimed.businessLayer.LaborModel;
+import ch.bfh.btx.blue.adimed.businessLayer.MediModel;
+import ch.bfh.btx.blue.adimed.businessLayer.Patient;
 
 //import ch.bfh.btx.blue.adimed.web.MainPage;
 
@@ -25,7 +35,7 @@ import com.vaadin.ui.VerticalLayout;
  */
 
 @SuppressWarnings("serial")
-public class Dashboard extends VerticalLayout implements View {
+public class Dashboard extends VerticalLayout implements View, Observer {
 
 	HorizontalLayout titleLayout;
 	Label titleLabel;
@@ -34,7 +44,7 @@ public class Dashboard extends VerticalLayout implements View {
 	Panel adminPanel;
 	VerticalLayout diagnoseLaborLayout;
 	Label diagnoseTitle;
-	Grid diagnoseGrid;
+	Table diagnoseGrid;
 	Label laborTitle;
 	Grid laborGrid;
 	Grid gotGptGgt;
@@ -60,12 +70,14 @@ public class Dashboard extends VerticalLayout implements View {
 	Button laborButton;
 	HorizontalLayout buttonLayout;
 	private DashboardModel dashModel;
+	private MediModel mediModel;
+	private LaborModel laborModel;
 
-	public Dashboard() {
-
-		dashModel = new DashboardModel();
-//		dashModel.addObserver(this);
-
+	public Dashboard(DashboardModel dbm, MediModel mm, LaborModel lm) {
+		mediModel = mm;
+		laborModel = lm;
+		dashModel = dbm;
+		dashModel.addObserver(this);
 
 		titleLayout = new HorizontalLayout();
 		titleLayout.setMargin(true);
@@ -157,19 +169,17 @@ public class Dashboard extends VerticalLayout implements View {
 		diagnoseLaborLayout.setWidth("100%");
 		diagnoseLaborLayout.setSpacing(true);
 		diagnoseTitle = new Label("Diagnosen");
-		diagnoseGrid = new Grid();
-		diagnoseGrid.addColumn("Status", String.class);
-		diagnoseGrid.addColumn("Diagnose", String.class);
-		diagnoseGrid.addColumn("Datum", String.class);
+		diagnoseGrid = new Table();
 
-//		diagnoseGrid.addRow("Status nach:", "Alkoholabhängigkeit", "1.1.17");
-//		diagnoseGrid.addRow("Verdacht auf:", "Leberzyrrhose", "1.1.16");
+		// diagnoseGrid.addRow("Status nach:", "Alkoholabhängigkeit", "1.1.17");
+		// diagnoseGrid.addRow("Verdacht auf:", "Leberzyrrhose", "1.1.16");
 
 		// Button to change view to medication
 		buttonLayout = new HorizontalLayout();
 		mediButton = new Button("", new Button.ClickListener() {
 
 			public void buttonClick(ClickEvent event) {
+				mediModel.setPatientCase(dashModel.getPatient().getPatientCase());
 				getUI().getNavigator().navigateTo(MainPage.MEDIVIEW);
 
 			}
@@ -180,6 +190,7 @@ public class Dashboard extends VerticalLayout implements View {
 		laborButton = new Button("", new Button.ClickListener() {
 
 			public void buttonClick(ClickEvent event) {
+				laborModel.setPatientCase(dashModel.getPatient().getPatientCase());
 				getUI().getNavigator().navigateTo(MainPage.LABORVIEW);
 
 			}
@@ -204,20 +215,24 @@ public class Dashboard extends VerticalLayout implements View {
 
 		// add elements to the main layout
 		addComponents(titleLayout, adminDiagnoseLaborLayout);
-		dashModel.loadData();
+
 	}
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		// TODO Auto-generated method stub
-
+		dashModel.loadData();
 	}
 
-//	
-//	public void update(Observable o, Object arg) {
-//	BeanItemContainer<Patient> container new BeanItemContainer<Patient>(Patient.class); 
-//	container.addAll(dashModel.getPatient());
-//	
-//}
+	public void update(Observable o, Object arg) {
+		Patient p = dashModel.getPatient();
+		nameField.setValue(p.getName());
+		
+		BeanItemContainer<Diagnosis> container = new BeanItemContainer<Diagnosis>(Diagnosis.class); 
+		container.addAll(dashModel.getDiagnosis());
+		diagnoseGrid.setContainerDataSource(container);
+		diagnoseGrid.refreshRowCache();
+		diagnoseGrid.setVisibleColumns("diagnosis", "status","diagnosisDate");// "laborDate",
+		diagnoseGrid.setColumnHeaders("Diagnose", "Status", "Datum");// "Datum",
+	}
 
 }

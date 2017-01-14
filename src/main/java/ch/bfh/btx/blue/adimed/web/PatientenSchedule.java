@@ -3,24 +3,25 @@ package ch.bfh.btx.blue.adimed.web;
 import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
+
 import com.vaadin.annotations.Theme;
 import com.vaadin.data.util.BeanItemContainer;
+import com.vaadin.event.ItemClickEvent;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.ClassResource;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.DateField;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
 
-import ch.bfh.btx.blue.adimed.businessLayer.Medication;
+import ch.bfh.btx.blue.adimed.businessLayer.DashboardModel;
 import ch.bfh.btx.blue.adimed.businessLayer.Patient;
-import ch.bfh.btx.blue.adimed.businessLayer.Schedule;
+import ch.bfh.btx.blue.adimed.businessLayer.PatientCase;
 import ch.bfh.btx.blue.adimed.businessLayer.ScheduleModel;
-import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.CheckBox;
 
 /*
  * The Patient Schedule displays all the appointment of the day 
@@ -47,8 +48,10 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 
 	Table scheduleTable;
 	private ScheduleModel scheduleModel;
+	private DashboardModel dashboardModel;
 
-	public PatientenSchedule() {
+	public PatientenSchedule(DashboardModel dashboardModel) {
+		this.dashboardModel = dashboardModel;
 		scheduleModel = new ScheduleModel();
 		scheduleModel.addObserver(this);
 
@@ -104,6 +107,7 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 		allBox.addComponent(scheduleLayout);
 		allBox.addComponent(BottomLayout);
 		addComponent(allBox);
+		addListenerToTable();
 		scheduleModel.loadData();
 
 	}
@@ -128,5 +132,21 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 		scheduleTable.setColumnHeaders("Vorname", "Name", "Stadt", "Geburtstag", "Tel.Nr", "Geschlecht", "PLZ",
 				"Strasse", "Versicherung", "Versicherungs Nb", "Allergie");// "Datum",
 	}
+	
+	public void addListenerToTable(){
+		scheduleTable.addItemClickListener(new ItemClickEvent.ItemClickListener() {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void itemClick(ItemClickEvent event) {
+				
+				Object o = event.getItem().getItemProperty("patientCase");
+				o.toString();
+				dashboardModel.setSelectedPatient(((PatientCase)event.getItem().getItemProperty("patientCase").getValue()).getPatient());
+				detailButton.setEnabled(true);
+								
+			}
+		});
+}
 
 }
