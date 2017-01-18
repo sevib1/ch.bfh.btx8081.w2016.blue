@@ -13,7 +13,6 @@ public class Patient {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int PID;
-
 	private String firstName;
 	private String name;
 	private String street;
@@ -22,16 +21,12 @@ public class Patient {
 	private Date birthDate;
 	private String phoneNb;
 	private char sex;
-
 	private String insurance;
 	private String insuranceNb;
 	private String allergy;
 
 	@OneToOne
 	private PatientCase patientCase;
-
-	// @OneToMany(mappedBy = "patient")
-	// private List<Appointment> appointment = new ArrayList<Appointment>();
 
 	public Patient() {
 

@@ -38,14 +38,8 @@ public class LaborView extends VerticalLayout implements View, Observer {
 		labGridLayout = new VerticalLayout();
 		labGridLayout.setMargin(true);
 		labGridLayout.setSpacing(true);
-		laborTable = new Table();/*
-									 * laborTable.addColumn("Untersuchungsart",
-									 * String.class);
-									 * laborTable.addColumn("Datum",
-									 * String.class);
-									 * laborTable.addColumn("Resultat",
-									 * String.class);
-									 */
+		laborTable = new Table();
+
 		laborTable.setSizeFull();
 		laborTable.setPageLength(8);
 
@@ -65,9 +59,6 @@ public class LaborView extends VerticalLayout implements View, Observer {
 		laborLayout.addComponents(laborTitle, backButton);
 		labGridLayout.addComponent(laborTable);
 
-		// laborTable.addRow("Urin", "12.07.16", "positiv");
-		// laborTable.addRow("Kokain", "29.08.16", "negativ");
-
 		// add components to the root layout
 		addComponents(laborLayout, labGridLayout);
 	}
@@ -85,7 +76,7 @@ public class LaborView extends VerticalLayout implements View, Observer {
 													// LaborView
 		laborTable.setContainerDataSource(container);
 		laborTable.refreshRowCache();
-		laborTable.setVisibleColumns("typeOfExamination", "results");// "laborDate",
-		laborTable.setColumnHeaders("Untersuchung", "Resultat");// "Datum",
+		laborTable.setVisibleColumns("typeOfExamination", "results");
+		laborTable.setColumnHeaders("Untersuchung", "Resultat");
 	}
 }

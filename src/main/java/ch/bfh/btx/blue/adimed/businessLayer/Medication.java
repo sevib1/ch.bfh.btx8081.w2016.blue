@@ -23,7 +23,7 @@ public class Medication {
 	private String comment;
 
 	public Medication() {
-		
+
 	}
 
 	public int getMedicationId() {

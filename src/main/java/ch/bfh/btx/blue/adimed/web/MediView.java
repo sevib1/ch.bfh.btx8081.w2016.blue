@@ -16,25 +16,25 @@ import ch.bfh.btx.blue.adimed.businessLayer.MediModel;
 import ch.bfh.btx.blue.adimed.businessLayer.Medication;
 
 @SuppressWarnings("serial")
-public class MediView extends VerticalLayout implements View,Observer{
+public class MediView extends VerticalLayout implements View, Observer {
 	HorizontalLayout titelLayout;
 	HorizontalLayout mediGridLayout;
 	Button backButton;
 	Label mediLabel;
 	Table mediTable;
 	private MediModel mediModel;
-	
+
 	public MediView(MediModel mm) {
 
 		mediModel = mm;
 		mediModel.addObserver(this);
-		
+
 		// set the title to the layout
 		titelLayout = new HorizontalLayout();
 		mediLabel = new Label("Medikationsübersicht");
 		titelLayout.setMargin(true);
 		titelLayout.setSpacing(true);
-		
+
 		// new grid for the medication
 		mediGridLayout = new HorizontalLayout();
 		mediGridLayout.setWidth("100%");
@@ -57,7 +57,6 @@ public class MediView extends VerticalLayout implements View,Observer{
 		// add elements to the layout
 		titelLayout.addComponents(mediLabel, backButton);
 		mediGridLayout.addComponent(mediTable);
-		// add elements to the main layout
 		addComponents(titelLayout, mediGridLayout);
 	}
 
@@ -65,15 +64,16 @@ public class MediView extends VerticalLayout implements View,Observer{
 	public void enter(ViewChangeEvent event) {
 		mediModel.loadData();
 	}
+
 	@Override
 	public void update(Observable o, Object arg) {
-		BeanItemContainer<Medication> container = new BeanItemContainer<Medication>(Medication.class);  
-		container.addAll(mediModel.getMedication()); // Verknüpfung zwischen Daten in LaborModel und LaborView
-		
+		BeanItemContainer<Medication> container = new BeanItemContainer<Medication>(Medication.class);
+		container.addAll(mediModel.getMedication());
+
 		mediTable.setContainerDataSource(container);
 		mediTable.refreshRowCache();
-		mediTable.setVisibleColumns("medName", "medDosis","applyDate","medStatus","applyForm","comment");//"laborDate", 
-		mediTable.setColumnHeaders( "Name", "Dosis","Datum", "Status","Verabreichungsweg","Kommentar");//"Datum",
+		mediTable.setVisibleColumns("medName", "medDosis", "applyDate", "medStatus", "applyForm", "comment");
+		mediTable.setColumnHeaders("Name", "Dosis", "Datum", "Status", "Verabreichungsweg", "Kommentar");
 	}
 
 }

@@ -5,20 +5,21 @@ import java.util.Observable;
 import ch.bfh.btx.blue.adimed.dataLayer.JPAConnection;
 
 public class ScheduleModel extends Observable {
-	
+
 	private ArrayList<Patient> patient;
 	private JPAConnection conn;
-	
+
 	public ArrayList<Patient> getPatient() {
 		return patient;
 	}
 
-	 public ScheduleModel(){
-	  patient = new ArrayList<Patient>();
-	  conn = new JPAConnection();
-	 }
+	public ScheduleModel() {
+		patient = new ArrayList<Patient>();
+		conn = new JPAConnection();
+	}
+
 	public void loadData() {
-	patient = new ArrayList<Patient>(conn.patient());
+		patient = new ArrayList<Patient>(conn.patient());
 
 		setChanged();
 		notifyObservers();

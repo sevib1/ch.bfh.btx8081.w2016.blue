@@ -9,17 +9,17 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class LaborResult {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int resultId;
-	
+
 	@ManyToOne
 	private PatientCase patientCase;
 	private Date laborDate;
 	private String typeOfExamination;
 	private boolean results;
-	
+
 	public LaborResult() {
 
 	}

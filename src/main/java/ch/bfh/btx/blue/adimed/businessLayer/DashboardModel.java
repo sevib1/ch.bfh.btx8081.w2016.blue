@@ -9,7 +9,7 @@ public class DashboardModel extends Observable {
 
 	private ArrayList<Diagnosis> diagnosis;
 	private Patient patient;
-	
+
 	JPAConnection conn;
 
 	public ArrayList<Diagnosis> getDiagnosis() {
@@ -23,16 +23,16 @@ public class DashboardModel extends Observable {
 
 	public void loadData() {
 		patient = conn.getPatientById(patient.getPID());
-		diagnosis = patient.getPatientCase().getDiagnosis();		
+		diagnosis = patient.getPatientCase().getDiagnosis();
 		setChanged();
 		notifyObservers();
 	}
 
 	public void setSelectedPatient(Patient patient) {
-		this.patient = patient;		
+		this.patient = patient;
 	}
-	
-	public Patient getPatient(){
+
+	public Patient getPatient() {
 		return patient;
 	}
 

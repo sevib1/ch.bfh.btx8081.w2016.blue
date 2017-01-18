@@ -79,7 +79,7 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 
 			public void buttonClick(ClickEvent event) {
 				scheduleTable.getValue();
-				
+
 				getUI().getNavigator().navigateTo(MainPage.DASHBOARD);
 
 			}
@@ -112,7 +112,6 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -130,21 +129,22 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 		scheduleTable.setColumnHeaders("Vorname", "Name", "Stadt", "Geburtstag", "Tel.Nr", "Geschlecht", "PLZ",
 				"Strasse", "Versicherung", "Versicherungs Nb", "Allergie");// "Datum",
 	}
-	
-	public void addListenerToTable(){
+
+	public void addListenerToTable() {
 		scheduleTable.addItemClickListener(new ItemClickEvent.ItemClickListener() {
 			private static final long serialVersionUID = 1L;
 
 			@Override
 			public void itemClick(ItemClickEvent event) {
-				
+
 				Object o = event.getItem().getItemProperty("patientCase");
 				o.toString();
-				dashboardModel.setSelectedPatient(((PatientCase)event.getItem().getItemProperty("patientCase").getValue()).getPatient());
+				dashboardModel.setSelectedPatient(
+						((PatientCase) event.getItem().getItemProperty("patientCase").getValue()).getPatient());
 				detailButton.setEnabled(true);
-								
+
 			}
 		});
-}
+	}
 
 }

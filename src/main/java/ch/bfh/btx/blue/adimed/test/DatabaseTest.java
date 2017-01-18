@@ -9,7 +9,7 @@ import ch.bfh.btx.blue.adimed.dataLayer.JPAConnection;
 public class DatabaseTest {
 
 	public static void main(String[] args) {
-		
+
 		JPAConnection hello = new JPAConnection();
 		hello.connection();
 

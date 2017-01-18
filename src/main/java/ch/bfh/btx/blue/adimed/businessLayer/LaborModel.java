@@ -27,6 +27,6 @@ public class LaborModel extends Observable {
 
 	public void setPatientCase(PatientCase patientCase) {
 		this.patientCase = patientCase;
-		
+
 	}
 }

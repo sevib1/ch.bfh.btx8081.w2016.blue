@@ -21,11 +21,11 @@ public class PatientCase {
 	@OneToMany(mappedBy = "patientCase")
 	private ArrayList<Diagnosis> diagnosis; // Association
 
-	@OneToOne(mappedBy="patientCase")
+	@OneToOne(mappedBy = "patientCase")
 	private Patient patient;
-	
+
 	public PatientCase() {
-		
+
 	}
 
 	public int getPatientCaseId() {
@@ -47,6 +47,5 @@ public class PatientCase {
 	public Patient getPatient() {
 		return patient;
 	}
-
 
 }
