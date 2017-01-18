@@ -1,5 +1,6 @@
 package ch.bfh.btx.blue.adimed.web;
 
+import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -9,6 +10,7 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.ClassResource;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.DateField;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
@@ -42,7 +44,7 @@ public class Dashboard extends VerticalLayout implements View, Observer {
 	Button backButton;
 	HorizontalLayout adminDiagnoseLaborLayout;
 	Panel adminPanel;
-	VerticalLayout diagnoseLaborLayout;
+	HorizontalLayout diagnoseLaborLayout;
 	Label diagnoseTitle;
 	Table diagnoseGrid;
 	Label laborTitle;
@@ -58,7 +60,7 @@ public class Dashboard extends VerticalLayout implements View, Observer {
 	TextField patIDField;
 	TextField nameField;
 	TextField firstNameField;
-	TextField birthDateField;
+	DateField birthDateField;
 	TextField genderField;
 	TextField phoneNbField;
 	TextField streetField;
@@ -119,7 +121,7 @@ public class Dashboard extends VerticalLayout implements View, Observer {
 		// firstNameField.setValue("Marco");
 		firstNameField.setWidth("70%");
 
-		birthDateField = new TextField("Geburtsdatum:");
+		birthDateField = new DateField("Geburtsdatum:");
 		birthDateField.setEnabled(false);
 		// birthDateField.setValue("23.08.1944");
 		birthDateField.setWidth("70%");
@@ -165,8 +167,8 @@ public class Dashboard extends VerticalLayout implements View, Observer {
 		adminPanel.setContent(adminForm);
 
 		// View of the diagnosis
-		diagnoseLaborLayout = new VerticalLayout();
-		diagnoseLaborLayout.setWidth("100%");
+		diagnoseLaborLayout = new HorizontalLayout();
+		diagnoseLaborLayout.setSizeFull();
 		diagnoseLaborLayout.setSpacing(true);
 		diagnoseTitle = new Label("Diagnosen");
 		diagnoseGrid = new Table();
@@ -225,7 +227,28 @@ public class Dashboard extends VerticalLayout implements View, Observer {
 
 	public void update(Observable o, Object arg) {
 		Patient p = dashModel.getPatient();
-		nameField.setValue(p.getName());
+		patIDField.setValue(Integer.toString(p.getPID()));		
+	
+		nameField.setValue(p.getName());		
+		
+		firstNameField.setValue(p.getFirstName());		
+		
+		birthDateField.setValue(p.getBirthDate());
+		
+		genderField.setValue(Character.toString(p.getSex()));
+		
+		phoneNbField.setValue(p.getPhoneNb());
+		
+		streetField.setValue(p.getStreet());
+		
+		postCodeField.setValue(Integer.toString(p.getZip())+" "+ p.getCity());
+		
+		allergyField.setValue(p.getAllergy());
+		
+		insuranceField.setValue(p.getInsuranceNb());
+		
+		
+		
 		
 		BeanItemContainer<Diagnosis> container = new BeanItemContainer<Diagnosis>(Diagnosis.class); 
 		container.addAll(dashModel.getDiagnosis());

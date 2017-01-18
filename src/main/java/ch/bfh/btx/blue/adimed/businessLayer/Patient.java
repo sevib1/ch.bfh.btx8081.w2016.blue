@@ -26,6 +26,7 @@ public class Patient {
 	private Date birthDate;
 	private String phoneNb;
 	private char sex;
+	
 
 	private String insurance;
 	private String insuranceNb;
