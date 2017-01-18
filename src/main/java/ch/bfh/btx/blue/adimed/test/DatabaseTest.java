@@ -1,11 +1,5 @@
 package ch.bfh.btx.blue.adimed.test;
 
-import javax.persistence.EntityManager;
-
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-
 import ch.bfh.btx.blue.adimed.dataLayer.JPAConnection;
 
 /**

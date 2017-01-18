@@ -1,14 +1,10 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -26,7 +22,6 @@ public class Patient {
 	private Date birthDate;
 	private String phoneNb;
 	private char sex;
-	
 
 	private String insurance;
 	private String insuranceNb;
@@ -34,10 +29,9 @@ public class Patient {
 
 	@OneToOne
 	private PatientCase patientCase;
-	
 
-	@OneToMany(mappedBy = "patient")
-	private List<Appointment> appointment = new ArrayList<Appointment>();
+	// @OneToMany(mappedBy = "patient")
+	// private List<Appointment> appointment = new ArrayList<Appointment>();
 
 	public Patient() {
 
@@ -95,13 +89,8 @@ public class Patient {
 		return patientCase;
 	}
 
-	public List<Appointment> getAppointment() {
-		return appointment;
-	}
-
 	public Patient getPatient() {
 		return this;
 	}
-
 
 }

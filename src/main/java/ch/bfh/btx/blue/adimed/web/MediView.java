@@ -1,9 +1,7 @@
 package ch.bfh.btx.blue.adimed.web;
 
-import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
-
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
@@ -14,10 +12,10 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
-
 import ch.bfh.btx.blue.adimed.businessLayer.MediModel;
 import ch.bfh.btx.blue.adimed.businessLayer.Medication;
 
+@SuppressWarnings("serial")
 public class MediView extends VerticalLayout implements View,Observer{
 	HorizontalLayout titelLayout;
 	HorizontalLayout mediGridLayout;

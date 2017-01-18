@@ -1,7 +1,5 @@
 package ch.bfh.btx.blue.adimed.web;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 import com.vaadin.data.util.BeanItemContainer;
@@ -30,8 +28,8 @@ public class LaborView extends VerticalLayout implements View, Observer {
 	public LaborView(LaborModel lm) {
 		labModel = lm;
 		labModel.addObserver(this);
-		
-		//layout for the results
+
+		// layout for the results
 		laborLayout = new HorizontalLayout();
 		laborTitle = new Label("Laborresultate");
 		laborLayout.setMargin(true);
@@ -50,8 +48,8 @@ public class LaborView extends VerticalLayout implements View, Observer {
 									 */
 		laborTable.setSizeFull();
 		laborTable.setPageLength(8);
-		
-		//backButton to go to the Dashboard view
+
+		// backButton to go to the Dashboard view
 		backButton = new Button("", new Button.ClickListener() {
 
 			public void buttonClick(ClickEvent event) {
@@ -59,18 +57,18 @@ public class LaborView extends VerticalLayout implements View, Observer {
 
 			}
 		});
-		
+
 		backButton.setIcon(new ClassResource("/back.png"));
 		backButton.setHeight("170%");
-		
-		//add components to the layout
+
+		// add components to the layout
 		laborLayout.addComponents(laborTitle, backButton);
 		labGridLayout.addComponent(laborTable);
 
 		// laborTable.addRow("Urin", "12.07.16", "positiv");
 		// laborTable.addRow("Kokain", "29.08.16", "negativ");
 
-		//add components to the root layout
+		// add components to the root layout
 		addComponents(laborLayout, labGridLayout);
 	}
 

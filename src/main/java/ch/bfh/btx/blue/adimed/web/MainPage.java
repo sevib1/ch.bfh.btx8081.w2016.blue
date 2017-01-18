@@ -4,13 +4,11 @@ import javax.servlet.annotation.WebServlet;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.navigator.Navigator;
-import com.vaadin.navigator.Navigator.ComponentContainerViewDisplay;
 import com.vaadin.navigator.View;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
-
 import ch.bfh.btx.blue.adimed.businessLayer.DashboardModel;
 import ch.bfh.btx.blue.adimed.businessLayer.LaborModel;
 import ch.bfh.btx.blue.adimed.businessLayer.MediModel;
@@ -45,15 +43,14 @@ public class MainPage extends UI {
 		layout.setMargin(true);
 		layout.setSpacing(true);
 		setContent(layout);
-		//ComponentContainerViewDisplay viewDisplay = new ComponentContainerViewDisplay(layout);
 
 		MediModel mm = new MediModel();
 		LaborModel lm = new LaborModel();
-		
+
 		// create the Navigator for all Views
-		navigator = new Navigator(this,this);
-		navigator.addView("", (View)layout);
-		navigator.addView(PATIENTSCHEDULE, (View)layout);
+		navigator = new Navigator(this, this);
+		navigator.addView("", (View) layout);
+		navigator.addView(PATIENTSCHEDULE, (View) layout);
 		navigator.addView(DASHBOARD, new Dashboard(dbm, mm, lm));
 		navigator.addView(LABORVIEW, new LaborView(lm));
 		navigator.addView(MEDIVIEW, new MediView(mm));

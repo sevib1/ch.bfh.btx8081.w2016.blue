@@ -3,7 +3,6 @@ package ch.bfh.btx.blue.adimed.web;
 import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
-
 import com.vaadin.annotations.Theme;
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.event.ItemClickEvent;
@@ -17,7 +16,6 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
-
 import ch.bfh.btx.blue.adimed.businessLayer.DashboardModel;
 import ch.bfh.btx.blue.adimed.businessLayer.Patient;
 import ch.bfh.btx.blue.adimed.businessLayer.PatientCase;

@@ -2,7 +2,6 @@ package ch.bfh.btx.blue.adimed.businessLayer;
 
 import java.util.ArrayList;
 import java.util.Observable;
-
 import ch.bfh.btx.blue.adimed.dataLayer.JPAConnection;
 
 public class MediModel extends Observable {

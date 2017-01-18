@@ -1,9 +1,6 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
 import java.util.Date;
-
-//import java.sql.Date;
-
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Entity;
