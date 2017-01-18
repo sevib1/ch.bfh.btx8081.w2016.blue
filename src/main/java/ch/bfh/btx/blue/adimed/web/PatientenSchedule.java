@@ -81,7 +81,7 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 
 			public void buttonClick(ClickEvent event) {
 				scheduleTable.getValue();
-				System.out.println(scheduleTable.getValue());
+				
 				getUI().getNavigator().navigateTo(MainPage.DASHBOARD);
 
 			}

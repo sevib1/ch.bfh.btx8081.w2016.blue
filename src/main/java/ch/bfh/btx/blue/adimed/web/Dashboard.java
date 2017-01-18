@@ -44,7 +44,7 @@ public class Dashboard extends VerticalLayout implements View, Observer {
 	Button backButton;
 	HorizontalLayout adminDiagnoseLaborLayout;
 	Panel adminPanel;
-	HorizontalLayout diagnoseLaborLayout;
+	VerticalLayout diagnoseLaborLayout;
 	Label diagnoseTitle;
 	Table diagnoseGrid;
 	Label laborTitle;
@@ -167,8 +167,8 @@ public class Dashboard extends VerticalLayout implements View, Observer {
 		adminPanel.setContent(adminForm);
 
 		// View of the diagnosis
-		diagnoseLaborLayout = new HorizontalLayout();
-		diagnoseLaborLayout.setSizeFull();
+		diagnoseLaborLayout = new VerticalLayout();
+		diagnoseLaborLayout.setWidth("100%");
 		diagnoseLaborLayout.setSpacing(true);
 		diagnoseTitle = new Label("Diagnosen");
 		diagnoseGrid = new Table();
