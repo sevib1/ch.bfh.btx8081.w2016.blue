@@ -38,6 +38,8 @@ public class LaborView extends VerticalLayout implements View, Observer {
 		laborLayout.setSpacing(true);
 
 		labGridLayout = new VerticalLayout();
+		labGridLayout.setMargin(true);
+		labGridLayout.setSpacing(true);
 		laborTable = new Table();/*
 									 * laborTable.addColumn("Untersuchungsart",
 									 * String.class);

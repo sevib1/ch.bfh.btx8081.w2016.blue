@@ -40,6 +40,8 @@ public class MediView extends VerticalLayout implements View,Observer{
 		// new grid for the medication
 		mediGridLayout = new HorizontalLayout();
 		mediGridLayout.setWidth("100%");
+		mediGridLayout.setMargin(true);
+		mediGridLayout.setSpacing(true);
 
 		mediTable = new Table();
 

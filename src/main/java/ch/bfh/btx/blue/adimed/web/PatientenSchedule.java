@@ -93,7 +93,7 @@ public class PatientenSchedule extends VerticalLayout implements View, Observer 
 
 		// add Componetns to the layout
 		scheduleTable.setPageLength(10);
-		scheduleTable.setSizeFull();
+		scheduleTable.setWidth("100%");
 		scheduleLayout.addComponents(scheduleTable);
 
 		// Bottom
