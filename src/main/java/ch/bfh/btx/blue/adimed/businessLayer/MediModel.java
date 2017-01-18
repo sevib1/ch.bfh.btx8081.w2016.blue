@@ -1,7 +1,6 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.Observable;
 
 import ch.bfh.btx.blue.adimed.dataLayer.JPAConnection;

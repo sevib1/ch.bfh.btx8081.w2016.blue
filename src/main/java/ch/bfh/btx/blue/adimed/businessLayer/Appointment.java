@@ -23,6 +23,7 @@ public class Appointment {
 	}
 
 	public Date getAgendaDate() {
+		// This field is never written. 
 		return agendaDate;
 	}
 

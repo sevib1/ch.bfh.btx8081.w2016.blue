@@ -1,7 +1,5 @@
 package ch.bfh.btx.blue.adimed.businessLayer;
 
-import java.util.ArrayList;
-
 
 public class Uebersicht {
 	
